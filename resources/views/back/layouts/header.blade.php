@@ -20,23 +20,6 @@
 				</a> --}}
 				
 				<ul class="nav user-menu">
-
-					<!-- App Lists -->
-					{{-- <li class="nav-item dropdown app-dropdown">
-						<a class="nav-link dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown" href="#"><i class="fe fe-app-menu"></i></a>
-						<ul class="dropdown-menu app-dropdown-menu">
-							<li>
-								<div class="app-list">
-									<div class="row">
-										<div class="col"><a class="app-item" href="inbox.html"><i class="fa fa-envelope"></i><span>Email</span></a></div>
-										<div class="col"><a class="app-item" href="calendar.html"><i class="fa fa-calendar"></i><span>Calendar</span></a></div>
-										<div class="col"><a class="app-item" href="chat.html"><i class="fa fa-comments"></i><span>Chat</span></a></div>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</li> --}}
-					<!-- /App Lists -->
 					
 					<!-- Notifications -->
 					<li class="nav-item dropdown noti-dropdown">

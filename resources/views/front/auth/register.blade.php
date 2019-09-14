@@ -69,12 +69,11 @@
                             <div class="col-md-12">
                                 <form id="SignupForm" action="{{ route('front.register.post') }}" method="post" style="margin-bottom: 20px" class="contact_us_form">
                                     @csrf
-                                    @dump(isset($_POST['SaveAccount']))
-                                    @if(Session::has('success'))
+                                    {{-- @if(Session::has('success'))
                                         <strong style="color: ##02b320; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px"> Votre compte est activé</strong>
                                     @else
                                         <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px"> Erreur dans les informations</strong>
-                                    @endif
+                                    @endif --}}
                                     <fieldset style="margin-top: 10px">
                                         <legend>1. Informations Personnelles</legend>
                                         <div class="row form-group">
@@ -185,9 +184,9 @@
                                             <div class="col-md-6">
                                                 <label for="devise">Devise</label>
                                                 <select name="devise" style="height: 40px; width: 370px">
+                                                    <option value="dollarUk">Dollar UK</option>
+                                                    <option value="dollarUs">Dollar US</option>
                                                     <option value="euro">Euro</option>
-                                                    <option value="dollar">Dollar</option>
-                                                    <option value="fcfa">F CFA</option>
                                                 </select>
                                                 @if($errors->has('idCard'))
                                                     <div class="invalid-feedback">{{ $errors->first('idCard') }}</div>
@@ -221,7 +220,7 @@
 
                                         <div class="form-group">
                                             <label for="codeBancaire">Code bancaire</label>
-                                            <input id="codeBancaire" name="codeBancaire" type="password" class="form-control" required value="{{ old('codeBancaire') }}" />
+                                            <input id="codeBancaire" name="codeBancaire" type="text" class="form-control" required value="{{ old('codeBancaire') }}" />
                                             @if($errors->has('codeBancaire'))
                                                 <div class="invalid-feedback">{{ $errors->first('codeBancaire') }}</div>
                                             @endif

@@ -69,19 +69,33 @@
     </section>
     
     <!--================Testimonials Area =================-->
-    <section class="testimonials_area" style="margin-bottom: 50px">
+    <section class="testimonials_area" id="testimonial">
         <div class="container">
             <div class="testimonials_slider owl-carousel">
                 <div class="item">
                     <div class="media">
                         <div class="media-left">
-                            <img src="{{ asset('assets/front/img/testimonials/testimonials-1.png') }}" alt="">
+                            <img src="{{ asset('assets/front/img/testimonials/testimonials-3.png') }}" alt="">
+                            <i>“</i>
+                        </div>
+                        <div class="media-body" id="partner">
+                            <p>Bonjour, Incroyable , mais VRAI ,j'ai connu ce site par un ami formidable J'ai bénéficié d'un prêt de 55.000€ que je dois rembourser sur 15ans avec un très faible
+                            interêt de 3% sur toute ma durée de prêt et là le lendemain matin j'ai reçu l'argent sans protocole.</p>
+                            <h4>- Michale John -</h4>
+                            {{-- <h5>Ceo of Minda</h5> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="media">
+                        <div class="media-left">
+                            <img src="{{ asset('assets/front/img/testimonials/testimonials-4.png') }}" alt="">
                             <i>“</i>
                         </div>
                         <div class="media-body">
-                            <p>Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor sit ametion consectetur elit. Vesti bulum nec odio ipsum. Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus suada faci lisis.</p>
-                            <h4>- Michale John</h4>
-                            <h5>Ceo of Minda</h5>
+                            <p>Bonsoir, je suis Mme Eline, je suis à la recherche de prêt d’argent depuis plusieurs mois j’ai été 4 fois victimes d’escroquerie. J’avais des dettes et des factures à payer . Je croyais que c’était fini pour moi,qu’il n’y avait plus d’issue… Mais heureusement j’ai vu des témoignages faites par beaucoup des personnes sur SOCIETE GENERALE ,c’est ainsi que j’ai obtenu mon 1er prêt pour régler mes dettes et réaliser mon projet en toute sécurité.</p>
+                            <h4>- Eline Marie -</h4>
+                            {{-- <h5>Ceo of Minda</h5> --}}
                         </div>
                     </div>
                 </div>
@@ -92,35 +106,22 @@
                             <i>“</i>
                         </div>
                         <div class="media-body">
-                            <p>Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor sit ametion consectetur elit. Vesti bulum nec odio ipsum. Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus suada faci lisis.</p>
-                            <h4>- Michale John</h4>
-                            <h5>Ceo of Minda</h5>
+                            <p>Si vous avez besoin de financement de prêt d’argent ou de n’importe qu’elle projet a réaliser, seul cette banque peut vous aider à le réaliser et vous soutenir financièrement…</p>
+                            <h4>- Marc -</h4>
+                            {{-- <h5>Ceo of Minda</h5> --}}
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="media">
                         <div class="media-left">
-                            <img src="img/testimonials/testimonials-1.png" alt="">
+                            <img src="{{ asset('assets/front/img/testimonials/testimonials-5.png') }}" alt="">
                             <i>“</i>
                         </div>
                         <div class="media-body">
-                            <p>Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor sit ametion consectetur elit. Vesti bulum nec odio ipsum. Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus suada faci lisis.</p>
-                            <h4>- Michale John</h4>
-                            <h5>Ceo of Minda</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="media">
-                        <div class="media-left">
-                            <img src="{{ asset('assets/front/img/testimonials/testimonials-1.png') }}" alt="">
-                            <i>“</i>
-                        </div>
-                        <div class="media-body">
-                            <p>Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus mal suada faci lisis. Lorem ipsum dolor sit ametion consectetur elit. Vesti bulum nec odio ipsum. Lorem ipsum dolor sit amet, cons ectetur elit. Vestibulum nec odios Suspe ndisse cursus suada faci lisis.</p>
-                            <h4>- Michale John</h4>
-                            <h5>Ceo of Minda</h5>
+                            <p>Bonsoir je m’appelle David et Je suis commerçant de produits pharmaceutiques et je note qu’en ce moment je suis comme le plus heureux de ce monde. Je viens en témoignage d’un prêt entre particulier que je viens de recevoir. J’ai reçu mon prêt grâce au service de cette banque.Je conseille vivement à tous mes proches et amis dans le besoin de contacter cette banque et vous serai satisfait pour votre demande.</p>
+                            <h4>- David Leo -</h4>
+                            {{-- <h5>Ceo of Minda</h5> --}}
                         </div>
                     </div>
                 </div>

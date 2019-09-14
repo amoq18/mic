@@ -83,7 +83,7 @@
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                            <a href="#">Société Générale</a>
+                                            <a href="https://m.facebook.com/Our-General-Society-110593493662269/?_rdr" target="_blank">Société Générale</a>
                                         </div>
                                     </div>
                                 </div>

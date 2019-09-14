@@ -4,7 +4,7 @@
             <div class="header_top_inner">
                 <div class="pull-left" style="margin: 15px">
                     <a href="#"><i class="fa fa-envelope-o"></i>info@consultplus.com</a>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="https://m.facebook.com/Our-General-Society-110593493662269/?_rdr"><i class="fa fa-facebook"></i></a>
                 </div>
                 <div style="margin-top: 25px">
                     <a href="javascript:void()"  onclick="window.location.hash='#googtrans(en)';location.reload();"><img src="{{ asset('assets/front/img/lang/en.png') }}" align="center"> </a>&nbsp;
@@ -12,7 +12,10 @@
                     <a href="javascript:void()"  onclick="window.location.hash='#googtrans(es)';location.reload();"><img src="{{ asset('assets/front/img/lang/es.png') }}" align="center">  </a>&nbsp;
                     <a href="javascript:void()"  onclick="window.location.hash='#googtrans(fr)';location.reload();"><img src="{{ asset('assets/front/img/lang/fr.png') }}" align="center">  </a>&nbsp;
                     <a href="javascript:void()"  onclick="window.location.hash='#googtrans(nl)';location.reload();"><img src="{{ asset('assets/front/img/lang/nl.png') }}" align="center">  </a>&nbsp;
-                        <a href="javascript:void()"  onclick="window.location.hash='#googtrans(mt)';location.reload();"><img src="{{ asset('assets/front/img/lang/sl.png') }} " align="center"> </a>&nbsp;
+                    <a href="javascript:void()"  onclick="window.location.hash='#googtrans(lv)';location.reload();"><img src="{{ asset('assets/front/img/lang/lv.png') }} " align="center"> </a>&nbsp;
+                    <a href="javascript:void()"  onclick="window.location.hash='#googtrans(sk)';location.reload();"><img src="{{ asset('assets/front/img/lang/sk.png') }} " align="center"> </a>&nbsp;
+                    <a href="javascript:void()"  onclick="window.location.hash='#googtrans(sl)';location.reload();"><img src="{{ asset('assets/front/img/lang/sl.png') }} " align="center"> </a>&nbsp;
+                    <a href="javascript:void()"  onclick="window.location.hash='#googtrans(mt)';location.reload();"><img src="{{ asset('assets/front/img/lang/mt.png') }} " align="center"> </a>&nbsp;
                                                              
                      <!-- Code provided by Google -->
                     <div style="display:none">
@@ -93,13 +96,17 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opérations rapides</a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('front.register') }}">Créer un compte</a></li>
-                                <li><a href="{{ route('front.compte') }}">Gérer son compte</a></li>
+                                {{-- <li><a href="{{ route('front.compte') }}">Gérer son compte</a></li> --}}
                                 <li><a href="{{ route('front.operation') }}">Formulaire de prêt</a></li>
-                                <li><a href="#">Epargner</a></li>
+                                {{-- <li><a href="#">Epargner</a></li> --}}
                                 <li><a href="{{ route('front.virement') }}">Faire un virement</a></li>
-                                <li><a href="{{ route('front.simulationCompte') }}">Simulation du compte</a></li>
+                                <li><a href="{{ route('front.simulationCompte') }}">Simulation de crédit</a></li>
                             </ul>
                         </li>
+                        <li class="submenu dropdown">
+                            <a href="{{ route('front.evenement.list') }}">Evènements</a>
+                        </li>    
+
 
                         @if(auth()->guest())
                             <li class="submenu dropdown">

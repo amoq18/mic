@@ -57,7 +57,7 @@ table,td,th	{	font-family:Courier New;
     <div class="banner_link">
         <div class="container">
             <div class="abnner_link_inner">
-                <a href="javascript:;">Simuler un compte</a>
+                <a href="javascript:;">Simulation de crédit</a>
             </div>
         </div>
     </div>
@@ -84,12 +84,24 @@ table,td,th	{	font-family:Courier New;
 						            <div class="row form-group">
 						            	<div class="col-md-6">
 						                    <label for="nom">Nom</label>
+						                    <input id="nom" name="nom" type="text" class="form-control" required />
+						                </div>
 						            	<div class="col-md-6">
+						                    <label for="Montant">Montant</label>
 						                    <input id="Montant" name="Montant" type="number" class="form-control" required />
 						                </div>
-						                <div class="col-md-6">
+						            </div>
+
+						            <div class="row form-group">
+						            	<div class="col-md-6">
 						                    <label for="Duree">Délai de remboursement (en Mois)</label>
 						                    <input id="Duree" name="Duree" type="number" class="form-control" required />
+						                </div>
+						                <div class="col-md-6">
+						                    <label for="devise">Devise</label>
+						                    <select name="devise">
+						                    	<option value="usd">Dollar usd</option>
+						                    </select>
 						                </div>
 						            </div>
 
@@ -101,8 +113,7 @@ table,td,th	{	font-family:Courier New;
 						            </div>
 						        </fieldset>
 						        <p>
-						            {{-- <input id="SaveAccount" class="btn btn-primary submit" name="Lancer" value="cliquer ici pour&#13;&#10;Lancer le Calcul"Simuler> --}}
-						            <input class="btn btn-success"	type="submit" name="Lancer" value="cliquer ici pour&#13;&#10; lancer le Calcul" />
+						            <input class="btn btn-success"	type="submit" name="Lancer" value="Cliquer ici pour lancer le calcul" />
 						        </p>
 						    </form>
 						    <div class="col-md-8" style="margin-top: 40px">

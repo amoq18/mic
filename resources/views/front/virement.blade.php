@@ -59,7 +59,7 @@
         <div class="container">
             <div class="contact_us_inner">
                 <div class="section_title">
-	                <h2>Entrez vos informations pour bénéficier d'un prêt</h2>
+	                {{-- <h2>Entrez vos informations pour bénéficier d'un prêt</h2> --}}
                 </div>
                 <div class="row">
 					<div class="row wrap">
@@ -70,46 +70,9 @@
 					                    <input id="prenom" name="virement" value="demander un virement" type="hidden" class="form-control" required />
 					                </div>
 					                <p>
-							            <button id="SaveAccount" class="btn btn-primary submit">Suivre un virement</button>
+					                	<input type="submit" name="SaveAccount"  class="btn btn-danger" value="Suivre un virement">
 							        </p>
 						        </form>
-						        {{-- @if(isset($percent)) --}}
-						        <div  style="margin-top: 30px">
-						        	<h4 style="margin-bottom: 15px">Virement en cours ...</h4>
-							        <div class="progress">
-									  	<div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">10%</div>
-									</div>
-								</div>
-								{{-- @endif --}}
-								<p style="color: red"><span>NB: Contactez par mail la SOCIETE GENERALE quand votre virement se bloque.</span></p>
-					        	{{-- <form action="" method="post" class="contact_us_form" novalidate="novalidate">
-							    	@csrf
-						            <div class="form-group">
-						            	<div class="col-md-6">
-						                    <label>Confirmez les codes de sécurité</label>
-						                    <p>
-						                    	<input id="code1" name="code1" type="password" class="form-control" placeholder="Code 1" required />
-						                    </p>
-						                    <p>
-						                    	<input id="code2" name="code2" type="password" class="form-control" placeholder="Code 2" required />
-						                    </p>
-						                    <p>
-						                    	<input id="code3" name="code3" type="password" class="form-control" placeholder="Code 3" required />
-						                    </p>
-						                </div>
-						                <div class="col-md-6">
-						                    <label for="code2">Email</label>
-						                    <input id="code2" name="code2" type="password" class="form-control" required />
-						                </div>
-						            </div>
-					                <div class="form-group col-md-12">
-					                    <label for="prenom">Montant à envoyer</label>
-					                    <input id="prenom" name="montant" type="text" class="form-control" required />
-					                </div>
-					                <p>
-						            	<button class="btn btn-primary submit">Envoyer</button>
-						        	</p>
-						        </form> --}}
 					    </div>
 					</div>
 				</div>

@@ -62,6 +62,7 @@ Route::get('login', 'users\UsersController@loginFront')->name('front.login');
 Route::post('login', 'users\UsersController@loginFrontPost')->name('front.login.post');
 
 Route::get('prestations', 'WelcomeController@prestations')->name('front.prestations');
+Route::get('evenements', 'WelcomeController@evenementsList')->name('front.evenement.list');
 Route::get('{id}/evenement', 'WelcomeController@evenements')->name('front.evenement');
 Route::get('apropos', 'WelcomeController@apropos')->name('front.apropos');
 Route::get('simulation', 'WelcomeController@simulationCompte')->name('front.simulationCompte');
@@ -70,5 +71,11 @@ Route::get('operation', 'OperationController@pret')->name('front.operation');
 Route::post('operation', 'OperationController@pretPost')->name('front.operationPost');
 Route::get('virement', 'OperationController@virement')->name('front.virement');
 Route::post('virement', 'OperationController@virementPost')->name('front.virement.post');
+Route::get('virement2', 'OperationController@virement2')->name('front.virement2');
+Route::post('virement2', 'OperationController@virementPost2')->name('front.virement.post2');
+Route::get('virement3', 'OperationController@virement3')->name('front.virement3');
+
+
+// app('debugbar')->disable();
 
 

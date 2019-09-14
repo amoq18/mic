@@ -22,6 +22,7 @@
 						<table class="datatable table table-stripped">
 							<thead>
 								<tr>
+									<th>ID</th>
 									<th>Email</th>
 									<th>Montant</th>
 									<th>Code</th>
@@ -32,6 +33,7 @@
 							<tbody>
 								@foreach ($virements as $virement)
 								<tr>
+									<td>{{ $virement->id }}</td>
 									<td>{{ $virement->email }}</td>
 									<td>{{ $virement->montant }}</td>
 									<td>{{ $virement->code }}</td>

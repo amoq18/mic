@@ -19,9 +19,10 @@
 											var Rf = (Ir / 1200);
 											var P1 = Af * ( Rf / ( 1 - ( 1 / ( Math.pow ( ( 1 + Rf ), Nf ) ) ) ) ) ;
 											var Pf = Math.floor ( ( P1 + 0.005 ) * 100) / 100;
-											var impr=	"<"+"br />Pret de "+
-														document.Saisie.Montant.value+
-														"euros sur "+
+											var impr=	"<"+"br /> "+
+														document.Saisie.nom.value+ " a preté une somme de " +
+														document.Saisie.Montant.value+ document.Saisie.devise.value+
+														" sur "+
 														document.Saisie.Duree.value+
 														" ans, au taux de "+
 														document.Saisie.Taux.value+

@@ -376,7 +376,7 @@
                         </div>
                         <div class="media-body" id="partner">
                             <p>Bonjour, Incroyable , mais VRAI ,j'ai connu ce site par un ami formidable J'ai bénéficié d'un prêt de 55.000€ que je dois rembourser sur 15ans avec un très faible
-                            interêt de 5% sur toute ma durée de prêt et là le lendemain matin j'ai reçu l'argent sans protocole.</p>
+                            interêt de 3% sur toute ma durée de prêt et là le lendemain matin j'ai reçu l'argent sans protocole.</p>
                             <h4>- Michale John -</h4>
                             {{-- <h5>Ceo of Minda</h5> --}}
                         </div>

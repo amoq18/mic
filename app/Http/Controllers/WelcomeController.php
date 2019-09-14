@@ -28,6 +28,13 @@ class WelcomeController extends Controller
         return view('front.apropos');
     }
 
+    public function evenementsList()
+    {
+        $news = Evenement::all();
+
+        return view('front.evenementsList', compact('news'));
+    }
+
     public function evenements($id)
     {
         $new = Evenement::findOrFail($id);

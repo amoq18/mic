@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pret;
 use App\Virement;
+use App\Utilisateur;
 use App\CodeConfirm;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PretMail;
@@ -88,22 +89,14 @@ class OperationController extends Controller
             return redirect()->route('front.login');
         }
         
-        $percent = Virement::all()->where('email', auth()->user()->email)->pluck('percent')->last();
-        
-        return view('front.virement', compact('percent'));
+        return view('front.virement');
     }
 
     public function virementPost(Request $request)
     {
-        // request()->validate([
-        //     'nom' => 'required',
-        //     'email' => 'required|email',
-        //     'montant' => 'required',
-        // ]);
-
         $virements = new Virement;
         $virements->virement = request('virement');
-        $virements->percent = 0;
+        $virements->percent = 99;
         $virements->code = mt_rand(100000, 999999);
         $virements->email = auth()->user()->email;
         $virements->montant = 0;
@@ -112,6 +105,43 @@ class OperationController extends Controller
 
         Mail::to('contact@societegenerale.org')->send(new VirementMail($virements));
 
-        return view('front.virement');
+        $virementDatas = Virement::all()->where('email', auth()->user()->email)->last();
+
+        // return redirect()->route('front.virement2');
+        return view('front.virement2', compact('virementDatas'));
+
+    }
+
+    public function virement2()
+    {
+        return view('front.virement2');
+    }
+
+    public function virementPost2()
+    {
+        // if(auth()->guest()){
+        //     return redirect()->route('front.login');
+        // }
+
+        $virementDatas = Virement::all()->where('email', auth()->user()->email)->pluk('code')->last();
+
+        dd($virementDatas);
+        // $id = Utilisateur ;
+        // $virements = new Virement;
+        // dump($virements->code);
+
+        // if ($virements->code == request('codeVirement')) {
+        //     $virementDatas = Virement::all()->where('email', auth()->user()->email)->last();
+
+        //     // return view('front.virement3', compact('virementDatas'));
+        //     return redirect()->route('front.virement2', compact('virementDatas'));
+        // }
+
+        return redirect()->route('front.virement2');
+    }
+
+    public function virement3()
+    {
+        return view('front.virement3');
     }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Virement;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CodeMail;
 
 class VirementController extends Controller
 {
@@ -24,8 +26,13 @@ class VirementController extends Controller
     public function editPost($id)
     {
     	$virement = Virement::findOrFail($id);
-    	$virement->percent = request('percent');
+        $virement->percent = request('percent');
+    	$virement->montant = request('montant');
     	$virement->save();
+// dd($virement);
+        if (request('confirmEmail') == 'oui') {
+            Mail::to($virement->email)->send(new CodeMail($virement));
+        }
 
     	return redirect()->route('back.virements.index');
     }
