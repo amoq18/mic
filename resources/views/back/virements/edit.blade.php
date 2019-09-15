@@ -28,35 +28,11 @@
 						@csrf
 						<div class="form-row">
 							<div class="col-md-6 mb-3">
-								<label for="percent">Pourcentage (%)<span style="color:red">*</span></label>
-								<input type="number" class="form-control" id="percent" name="percent" value="{{ $virement->percent }}">
-								<div class="valid-feedback">
-									Looks good!
-								</div>
-							</div>
-
-							<div class="col-md-6 mb-3">
-								<label for="montant">Montant (%)<span style="color:red">*</span></label>
+								<label for="montant">Montant<span style="color:red">*</span></label>
 								<input type="number" class="form-control" id="montant" name="montant" value="{{ $virement->montant }}">
 								<div class="valid-feedback">
 									Looks good!
 								</div>
-							</div>
-
-							<div class="col-md-6 mb-3">
-								<label for="code">Code</label>
-								<input type="text" class="form-control" id="code" name="code" value="{{ $virement->code }}" disabled>
-								<div class="valid-feedback">
-									Looks good!
-								</div>
-							</div>
-
-							<div class="col-md-6 mb-3">
-								<label for="code">Envoyer code par email ?</label>
-								<select name="confirmEmail">
-									<option value="oui">Oui</option>
-									<option value="non">Non</option>
-								</select>
 							</div>
 						</div>
 						<a href="{{ route('back.virements.index') }}" style="margin-right: 10px" class="btn btn-primary">Annuler</a>

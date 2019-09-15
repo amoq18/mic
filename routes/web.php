@@ -39,7 +39,7 @@ Route::group(['prefix' => 'admin'], function() {
 
 	//Clients
 	Route::group(['prefix' => 'clients'], function() {
-		Route::get('/', 'users\UsersController@home')->name('back.clints.index');
+		Route::get('/', 'users\UsersController@list')->name('back.clients.index');
 	});
 
 
@@ -74,7 +74,6 @@ Route::post('virement', 'OperationController@virementPost')->name('front.viremen
 Route::get('virement2', 'OperationController@virement2')->name('front.virement2');
 Route::post('virement2', 'OperationController@virementPost2')->name('front.virement.post2');
 Route::get('virement3', 'OperationController@virement3')->name('front.virement3');
-
 
 // app('debugbar')->disable();
 

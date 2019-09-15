@@ -13,7 +13,12 @@ class UsersController extends Controller
         if(auth()->guest()){
             return redirect()->route('back.login');
         }
+        
+        return view('back.backoffice');
+    }
 
+    public function list()
+    {
         $clients = Utilisateur::all()->where('isAdmin', 0);
         
         return view('back.customers.list', compact('clients'));
@@ -86,7 +91,7 @@ class UsersController extends Controller
             'nom' => 'required|max:50',
             'prenom' => 'required|max:50',
             'telephone' => 'required|max:50',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:utilisateurs',
             'date_naissance' => 'required',
             'adresse' => 'required',
             'pays' => 'required',
@@ -120,6 +125,8 @@ class UsersController extends Controller
         $users->isAdmin = 0;
         $users->save();
 
+        // return back()->with('success', 'Merci pour votre inscription !');
+
         return redirect()->route('front.compte');
     }
 
@@ -130,6 +137,11 @@ class UsersController extends Controller
 
     public function loginFrontPost()
     {
+        request()->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
         $res = auth()->attempt([
             'email' => request('email'),
             'password' => request('password'),
@@ -139,6 +151,7 @@ class UsersController extends Controller
             return redirect()->route('front.virement');
         }
 
-        return back()->withInput();
+        return back()->withInput()->withErrors([
+            'email' => '']);
     }
 }

@@ -25,7 +25,7 @@
 				<li class="submenu">
 					<a href="#"><i class="fe fe-users"></i> <span> Clients</span> <span class="menu-arrow"></span></a>
 					<ul style="display: none;">
-						<li><a href="{{ route('back.clints.index') }}">Liste</a></li>
+						<li><a href="{{ route('back.clients.index') }}">Liste</a></li>
 					</ul>
 				</li>
 			</ul>

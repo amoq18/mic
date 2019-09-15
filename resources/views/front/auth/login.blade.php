@@ -29,15 +29,24 @@
                     <div class="col-md-8">
                         <div class="row">
                             <form class="contact_us_form" action="{{ route('front.login.post') }}" method="post">
+                                @if($errors->all())
+                                    <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px"> Vos identifiants sont incorrects</strong>
+                                @endif
                                 @csrf
                                 <div class="form-group col-md-12">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                                    {{-- @if($errors->has('email'))
+                                        <div class="invalid-feedback">{{ $errors->first('email') }}</div>
+                                    @endif --}}
                                 </div>
                                 <div class="form-group col-md-12">
                                     <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
+                                    @if($errors->has('password'))
+                                        <div class="invalid-feedback">{{ $errors->first('password') }}</div>
+                                    @endif
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <button type="submit" class="btn green_submit_btn form-control">Envoyer</button>
+                                    <button type="submit" class="btn green_submit_btn form-control" name="submit">Envoyer</button>
                                 </div>
                             </form>
                         </div>

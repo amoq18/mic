@@ -43,7 +43,6 @@
                         });
                     </script>
                 </div>
-            {{-- </div> --}}
 
                 <div class="pull-right" style="margin: -30px">
                     <a class="main_btn" href="{{ route('front.operation') }}">Démarrer une opération </a>
@@ -120,6 +119,7 @@
                             <li class="submenu dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ auth()->user()->nom[0] }}. {{ auth()->user()->prenom }}</a>
                                 <ul class="search">
+                                    <li><a href="{{ route('front.compte') }}">Mon Compte</a></li>
                                     <li><a href="{{ route('front.logout') }}">Se Déconnecter</a></li>
                                 </ul>
                             </li>

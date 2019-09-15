@@ -1,5 +1,5 @@
 
-Envoi de mail depuis le site web SOCIETE GENERALEpar : {{ $pret['nom'] }} 
+Envoi de mail par : {{ $pret['nom'] }} 
 <h3>Informations liées au prêts</h3>
 <ul>
 	<li>Nom: <strong>{{ $pret['nom'] }}</strong></li>

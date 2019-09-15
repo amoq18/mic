@@ -59,24 +59,37 @@
         <div class="container">
             <div class="contact_us_inner">
                 <div class="section_title">
-	                <h2>Entrez vos informations pour bénéficier d'un prêt</h2>
+	                {{-- <h2>Entrez vos informations pour bénéficier d'un prêt</h2> --}}
                 </div>
                 <div class="row">
 					<div class="row wrap">
 						<div class="col-md-offset-2 col-md-8">
-							{{-- @foreach ($virementDatas as $virement) --}}
-							
-			        		<div  style="margin-top: 30px">
-					        	<h4 style="margin-bottom: 15px">Virement en cours ...</h4>
-						        <div class="progress">
-								  	<div class="progress-bar" role="progressbar" style="width: {{ $virementDatas->percent }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ $virementDatas->percent }}%</div>
-								</div>
-							</div>
-							{{-- @endforeach --}}
-						<p style="color: red"><span>NB: Contactez par mail la SOCIETE GENERALE quand votre virement se bloque.</span></p>
+							<form id="SignupForm" action="{{ route('front.virement.post2') }}" method="post" class="contact_us_form">
+								<script type="text/javascript">alert('Pour tout virement, Consultez votre boîte mail pour avoir le code de confirmation')</script>
+						    	@csrf
+						    	@if($errors->all())
+	                                <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Le code entré est incorrecte</strong>
+	                            @endif
+					            <legend>EVOLUTION DU VIREMENT</legend>
+					        	<div class="row">
+					        		<div class="col-md-12" style="margin-bottom: 15px">
+						            	<label for="code2">Entrer le code de confirmation pour achever le virement</label>
+						            	<input id="code2" name="code2" type="password" class="form-control" required value="" />
+				                	</div>
+					            </div>
+						        {{-- <p> --}}
+						        	<input type="submit" name="send" class="btn btn-danger" value="Continuer">
+						        {{-- </p> --}}
+					    	</form>
+					    	{{-- @if (request('code2'))
+					    	@endif --}}
 
-						        
-					        	
+					    	<div class="row col-md-12" style="margin-top: 40px">
+		                			Virement en cours ...
+		                		<div class="progress">
+								  	<div class="progress-bar" role="progressbar" style="width: 75%;">75%</div>
+								</div>
+		                	</div>
 					    </div>
 					</div>
 				</div>

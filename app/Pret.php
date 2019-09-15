@@ -9,6 +9,8 @@ class Pret extends Model
     protected $fillable = [
         'nom',
         'prenom',
+        'devise',
+		'deviseRevenu',
         'date_naissance', 
         'telephone', 
         'adresse',
@@ -22,5 +24,8 @@ class Pret extends Model
 		'statutProfessionnel',
 		'email',
 		'nousConnaitre',
+		'idCard',
+		'codeBancaire',
+		'delaiRemboursement',
     ];
 }

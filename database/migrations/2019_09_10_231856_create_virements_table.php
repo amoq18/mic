@@ -15,11 +15,14 @@ class CreateVirementsTable extends Migration
     {
         Schema::create('virements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('virement');
-            $table->integer('percent');
-            $table->string('code');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('iban');
+            $table->string('bicswift');
+            $table->string('nameBanque');
             $table->string('montant');
-            $table->string('email');
+            $table->string('code');
+            $table->string('devise');
             $table->timestamps();
         });
     }

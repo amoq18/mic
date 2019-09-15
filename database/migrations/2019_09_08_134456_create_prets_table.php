@@ -25,8 +25,10 @@ class CreatePretsTable extends Migration
             $table->string('pays');
             $table->string('codePostal')->nullable();
             $table->string('montantPret');
+            $table->string('devise');
             $table->string('rolePret')->nullable();
             $table->string('revenuAnnuel');
+            $table->string('deviseRevenu');
             $table->string('nousConnaitre')->nullable();
             $table->string('statutProfessionnel');
             $table->string('email');

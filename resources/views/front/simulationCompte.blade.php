@@ -50,7 +50,7 @@ table,td,th	{	font-family:Courier New;
     <section class="banner_area">
         <div class="container">
             <div class="banner_content">
-                <h3>Simuler un compte</h3>
+                <h3>Simulation de crédit</h3>
             </div>
         </div>
     </section>
@@ -73,12 +73,8 @@ table,td,th	{	font-family:Courier New;
 						    <div id='progress'><div id='progress-complete'></div></div>
 
 						    {{-- <form id="SignupForm" action="" method="post" class="contact_us_form" novalidate="novalidate"> --}}
-						    <form	name="Saisie" method="post"
-					action="javascript:Calcul();">
+						    <form 	name="Saisie" method="post" action="javascript:Calcul();">
 						    	@csrf
-					        	@if(isset($succes))
-				                	<span style="color: white; background: #369c15; margin: 20px 0px 0px 0px;">{{ $succes }}</span>
-				                @endif
 						        <fieldset style="margin: 10px">
 						            <legend>ENTREZ VOS INFORMATIONS</legend>
 						            <div class="row form-group">
@@ -95,14 +91,15 @@ table,td,th	{	font-family:Courier New;
 						            <div class="row form-group">
 						            	<div class="col-md-6">
 						                    <label for="Duree">Délai de remboursement (en Mois)</label>
-						                    <input id="Duree" name="Duree" type="number" class="form-control" required />
+						                    <input min="0" max="12" id="Duree" name="Duree" type="number" class="form-control" required />
 						                </div>
 						                <div class="col-md-6">
-						                    <label for="devise">Devise</label>
-						                    <select name="devise">
-						                    	<option value="usd">Dollar usd</option>
-						                    </select>
-						                </div>
+                                            <label for="devise">Devise</label>
+                                            <select name="devise" style="height: 40px; width: 370px">
+                                                <option value="dollar">Dollar</option>
+                                                <option value="euro">Euro</option>
+                                            </select>
+                                        </div>
 						            </div>
 
 						            <div class="row form-group">

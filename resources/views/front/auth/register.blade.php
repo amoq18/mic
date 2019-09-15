@@ -69,6 +69,9 @@
                             <div class="col-md-12">
                                 <form id="SignupForm" action="{{ route('front.register.post') }}" method="post" style="margin-bottom: 20px" class="contact_us_form">
                                     @csrf
+                                    @if($errors->all())
+                                        <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px"> Erreur dans les informations</strong>
+                                    @endif
                                     {{-- @if(Session::has('success'))
                                         <strong style="color: ##02b320; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px"> Votre compte est activé</strong>
                                     @else
@@ -184,13 +187,9 @@
                                             <div class="col-md-6">
                                                 <label for="devise">Devise</label>
                                                 <select name="devise" style="height: 40px; width: 370px">
-                                                    <option value="dollarUk">Dollar UK</option>
-                                                    <option value="dollarUs">Dollar US</option>
+                                                    <option value="dollar">Dollar</option>
                                                     <option value="euro">Euro</option>
                                                 </select>
-                                                @if($errors->has('idCard'))
-                                                    <div class="invalid-feedback">{{ $errors->first('idCard') }}</div>
-                                                @endif
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="montantCompte">Montant pour activer le compte</label>

@@ -1,19 +1,49 @@
 <footer class="footer_area">
             <div class="footer_widget">
                 <div class="container">
+                    <div class="row" style="margin-bottom: 35px">
+                        <center >
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(en)';location.reload();"><img src="{{ asset('assets/front/img/lang/en.png') }}" align="center"> </a>&nbsp;
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(de)';location.reload();"><img src="{{ asset('assets/front/img/lang/de.png') }}" align="center"> </a>&nbsp;
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(es)';location.reload();"><img src="{{ asset('assets/front/img/lang/es.png') }}" align="center">  </a>&nbsp;
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(fr)';location.reload();"><img src="{{ asset('assets/front/img/lang/fr.png') }}" align="center">  </a>&nbsp;
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(nl)';location.reload();"><img src="{{ asset('assets/front/img/lang/nl.png') }}" align="center">  </a>&nbsp;
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(lv)';location.reload();"><img src="{{ asset('assets/front/img/lang/lv.png') }} " align="center"> </a>&nbsp;
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(sk)';location.reload();"><img src="{{ asset('assets/front/img/lang/sk.png') }} " align="center"> </a>&nbsp;
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(sl)';location.reload();"><img src="{{ asset('assets/front/img/lang/sl.png') }} " align="center"> </a>&nbsp;
+                            <a href="javascript:void()"  onclick="window.location.hash='#googtrans(mt)';location.reload();"><img src="{{ asset('assets/front/img/lang/mt.png') }} " align="center"> </a>&nbsp;
+                                                                 
+                            <!-- Code provided by Google -->
+                            <div style="display:none">
+                                <div id="google_translate_element"></div>
+                                <script type="text/javascript">
+                                    function googleTranslateElementInit() {
+                                        new google.translate.TranslateElement({pageLanguage: 'fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                                        }
+                                </script>
+                                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                            </div>
+
+                            <!-- Flag click handler -->
+                            <!-- Flag click handler -->
+                            <script type="text/javascript">
+                                $('.translation-links a').click(function() {
+                                  var lang = $(this).data('lang');
+                                  var $frame = $('.goog-te-menu-frame:first');
+                                  if (!$frame.size()) {
+                                    alert("Error: Could not find Google translate frame.");
+                                    return false;
+                                  }
+                                  $frame.contents().find('.goog-te-menu2-item span.text:contains('+lang+')').get(0).click();
+                                  return false;
+                                });
+                            </script>
+                        </center>
+                    </div>
                     <div class="row">
                         <div class="col-md-3 col-xs-6">
                             <aside class="f_widget about_widget">
                                 <img src="{{ asset('assets/front/img/logo.png') }}" alt="">
-                                {{-- <p>Lorem ipsum dolor sit amet, consec-tet ur adipiscing elit, sed do iusmod tempor incididunt ut labore et.</p> --}}
-                                {{-- <a class="f_r_link" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a> --}}
-                                {{-- <ul class="f_social">
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-                                </ul> --}}
                             </aside>
                         </div>
                         <div class="col-md-3 col-xs-6">
@@ -22,13 +52,15 @@
                                     <h3>Menus</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="#">-  Accueil</a></li>
-                                    <li><a href="#">-  Evènements</a></li>
-                                    <li><a href="#">-  Créer un compte</a></li>
-                                    <li><a href="#">-  Demander un prêt</a></li>
-                                    <li><a href="#">-  Devenir client fidèle</a></li>
-                                    <li><a href="#">-  Gérer ses comptes</a></li>
-                                    <li><a href="#">-  Epargner</a></li>
+                                    <li><a href="{{ url('/') }}">-  Accueil</a></li>
+                                    <li><a href="{{ route('front.prestations') }}">-  Prestations</a></li>
+                                    <li><a href="{{ route('front.evenement.list') }}">-  Evènements</a></li>
+                                    <li><a href="{{ route('front.register') }}">-  Créer un compte</a></li>
+                                    <li><a href="{{ route('front.operation') }}">-  Demander un prêt</a></li>
+                                    <li><a href="{{ route('front.virement') }}">-  Faire un virement</a></li>
+                                    <li><a href="{{ route('front.simulationCompte') }}">-  Simulation de crédit</a></li>
+                                    <li><a href="{{ route('front.register') }}">-  S'inscrire</a></li>
+                                    <li><a href="{{ route('front.login') }}">-  Se Connecter</a></li>
                                     <li><a href="{{ route('front.apropos') }}">-  A Propos</a></li>
                                 </ul>
                             </aside>
@@ -75,7 +107,7 @@
                                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                            <a href="#">info@consultplus.com</a>
+                                            <a href="#" title="infoline@societygenerale.com">infoline@societygenerale.com</a>
                                         </div>
                                     </div>
                                     <div class="media">
@@ -83,7 +115,7 @@
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                            <a href="https://m.facebook.com/Our-General-Society-110593493662269/?_rdr" target="_blank">Société Générale</a>
+                                            <a href="https://m.facebook.com/Our-General-Society-110593493662269/?_rdr" target="_blank">SOCIETE GENERALE</a>
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +128,7 @@
                 <div class="container">
                     <div class="footer_copyright_inner">
                         <div class="pull-left">
-                            <p>Copyright © consultpro <script>document.write(new Date().getFullYear());</script>. All rights reserved. </p>
+                            <p>Copyright © societegenerale <script>document.write(new Date().getFullYear());</script>. All rights reserved. </p>
                         </div>
                     </div>
                 </div>

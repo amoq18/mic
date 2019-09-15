@@ -23,10 +23,13 @@
 							<thead>
 								<tr>
 									<th>ID</th>
-									<th>Email</th>
+									<th>Nom</th>
+									<th>Prénoms</th>
+									<th>IBAN</th>
+									<th>BICSWIFT</th>
+									<th>Nom Banque</th>
 									<th>Montant</th>
-									<th>Code</th>
-									<th>Pourcentage</th>
+									<th>Devise</th>
 									<th class="text-right">Action</th>
 								</tr>
 							</thead>
@@ -34,10 +37,13 @@
 								@foreach ($virements as $virement)
 								<tr>
 									<td>{{ $virement->id }}</td>
-									<td>{{ $virement->email }}</td>
+									<td>{{ $virement->nom }}</td>
+									<td>{{ $virement->prenom }}</td>
+									<td>{{ $virement->iban }}</td>
+									<td>{{ $virement->bicswift }}</td>
+									<td>{{ $virement->nameBanque }}</td>
 									<td>{{ $virement->montant }}</td>
-									<td>{{ $virement->code }}</td>
-									<td>{{ $virement->percent }}</td>
+									<td>{{ $virement->devise }}</td>
 									<td class="text-right">
 										<div class="actions">
 											<a href="{{ route('back.virements.edit', $virement->id) }}" class="btn btn-sm bg-success-light mr-2">

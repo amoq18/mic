@@ -33,6 +33,10 @@
 		    border-radius: 0px;
 		    margin-right: 20px;
 		}
+
+		.invalid-feedback{
+			color: red;
+		}
 	</style>
 @endsection
 
@@ -69,8 +73,12 @@
 
 					    <form id="SignupForm" action="{{ route('front.operationPost') }}" method="post" class="contact_us_form">
 					    	@csrf
-					    	@if(Session::has('success'))
-                                <strong style="color: ##02b320; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">{{ Session::get('success') }}</strong>
+					    	@if (Session::has('success'))
+					    		<script type="text/javascript">alert('Votre demande de prêt a été bien envoyée. Consultez votre mail dans les prochaines 48 heures. Nous vous contacterons afin de donner une suite a votre demande de pret. Il se peut que notre message soit dans les spams, verifiez donc.')</script>
+					    		{{-- <strong style="background: green; border-radius: 40px; padding: 5px 15px 7px 15px; color: white; font-size: 16px; margin: 20px 0px 10px 0px;">{{ Session::get('success') }}</strong> --}}
+					    	@endif
+					    	@if($errors->all())
+                                <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Vos informations sont incorrectes</strong>
                             @endif
 					        <fieldset style="margin-top: 10px">
 					            <legend>1. Informations Personnelles</legend>
@@ -79,14 +87,14 @@
 					                    <label for="nom">Nom</label>
 					                    <input id="nom" name="nom" type="text" class="form-control" required value="{{ old('nom') }}" />
 						                @if($errors->has('nom'))
-						                	{{ $errors->first('nom') }}
+						                	<div class="invalid-feedback">{{ $errors->first('nom') }}</div>
 						                @endif
 					                </div>
 					                <div class="col-md-6">
 					                    <label for="prenom">Prénom</label>
 					                    <input id="prenom" name="prenom" type="text" class="form-control" value="{{ old('prenom') }}" required />
 					                    @if($errors->has('prenom'))
-					                    	{{ $errors->first('prenom') }}
+					                    	<div class="invalid-feedback">{{ $errors->first('prenom') }}</div>
 					                    @endif
 					                </div>
 					            </div>
@@ -96,14 +104,14 @@
 					                    <label for="telephone">Téléphone</label>
 					                    <input id="telephone" name="telephone" type="text" class="form-control"  value="{{ old('telephone') }}" required />
 					                    @if($errors->has('telephone'))
-					                    	{{ $errors->first('telephone') }}
+					                    	<div class="invalid-feedback">{{ $errors->first('telephone') }}</div>
 					                    @endif
 					                </div>
 					                <div class="col-md-6">
 					                    <label for="date_naissance">Date de naissance</label>
 					                    <input id="date_naissance" name="date_naissance" type="date" class="form-control"  value="{{ old('date_naissance') }}" required />
 					                    @if($errors->has('date_naissance'))
-					                    	{{ $errors->first('date_naissance') }}
+					                    <div class="invalid-feedback">{{ $errors->first('date_naissance') }}</div>
 					                    @endif
 					                </div>
 					            </div>
@@ -113,14 +121,14 @@
 					                    <label for="adresse">Adresse</label>
 					                    <input id="adresse" name="adresse" type="text" class="form-control"  value="{{ old('adresse') }}" required />
 					                    @if($errors->has('adresse'))
-					                    	{{ $errors->first('adresse') }}
+					                    	<div class="invalid-feedback">{{ $errors->first('adresse') }}</div>
 					                    @endif
 					                </div>
 					                <div class="col-md-6">
 					                    <label for="pays">Pays</label>
 					                    <input id="pays" name="pays" type="text" class="form-control"  value="{{ old('pays') }}" required />
 					                    @if($errors->has('pays'))
-					                    	{{ $errors->first('pays') }}
+					                    	<div class="invalid-feedback">{{ $errors->first('pays') }}</div>
 					                    @endif
 					                </div>
 					            </div>
@@ -129,14 +137,14 @@
 					                    <label for="ville">Ville</label>
 					                    <input id="ville" name="ville" type="text" class="form-control"  value="{{ old('ville') }}" required />
 					                    @if($errors->has('ville'))
-					                    	{{ $errors->first('ville') }}
+					                    	<div class="invalid-feedback">{{ $errors->first('ville') }}</div>
 					                    @endif
 					                </div>
 					                <div class="col-md-6">
 					                    <label for="region">Région</label>
 					                    <input id="region" name="region" type="text" class="form-control"  value="{{ old('region') }}" required />
 					                    @if($errors->has('region'))
-					                    	{{ $errors->first('region') }}
+					                    	<div class="invalid-feedback">{{ $errors->first('region') }}</div>
 					                    @endif
 					                </div>
 					            </div>
@@ -145,26 +153,35 @@
 					            	<label for="codePostal">Code Postal</label>
 					            	<input id="codePostal" name="codePostal" type="text" class="form-control"  value="{{ old('codePostal') }}" required />
 					            	@if($errors->has('codePostal'))
-				                    	{{ $errors->first('codePostal') }}
+				                    	<div class="invalid-feedback">{{ $errors->first('codePostal') }}</div>
 				                    @endif
 					            </div>
 					        </fieldset>
 
 					        <fieldset>
 					            <legend>2. Information sur le prêt</legend>
-					            <div class="form-group">
-					            	<label for="montantPret">Montant du prêt désiré</label>
-					            	<input id="montantPret" name="montantPret" type="number" class="form-control"  value="{{ old('montantPret') }}" required />
-					            	@if($errors->has('montantPret'))
-				                    	{{ $errors->first('montantPret') }}
-				                    @endif
+					            <div class="row form-group">
+					            	<div class="col-md-6">
+						            	<label for="montantPret">Montant du prêt désiré</label>
+						            	<input id="montantPret"  name="montantPret" type="number" min="0" class="form-control"  value="{{ old('montantPret') }}" required />
+						            	@if($errors->has('montantPret'))
+					                    	<div class="invalid-feedback">{{ $errors->first('montantPret') }}</div>
+					                    @endif
+				                	</div>
+				                    <div class="col-md-6">
+                                        <label for="devise">Devise</label>
+                                        <select name="devise" style="height: 40px; width: 370px">
+                                            <option value="dollar">Dollar</option>
+                                            <option value="euro">Euro</option>
+                                        </select>
+                                    </div>
 					            </div>
 
 					            <div class="form-group">
 					            	<label for="rolePret">A quoi vous servira le prêt ?</label>
 					            	<input id="rolePret" name="rolePret" type="text" class="form-control" value="{{ old('rolePret') }}" />
 					            	@if($errors->has('rolePret'))
-				                    	{{ $errors->first('rolePret') }}
+				                    	<div class="invalid-feedback">{{ $errors->first('rolePret') }}</div>
 				                    @endif
 					            </div>
 
@@ -172,23 +189,23 @@
 					            	<label for="idCard">ID Card</label>
 					            	<input id="idCard" name="idCard" type="text" class="form-control" required value="{{ old('idCard') }}" />
 					            	@if($errors->has('idCard'))
-				                    	{{ $errors->first('idCard') }}
+				                    	<div class="invalid-feedback">{{ $errors->first('idCard') }}</div>
 				                    @endif
 					            </div>
 
 					            <div class="form-group">
 					            	<label for="codeBancaire">Code bancaire</label>
-					            	<input id="codeBancaire" name="codeBancaire" type="text" class="form-control" required value="{{ old('codeBancaire') }}" />
+					            	<input id="codeBancaire" name="codeBancaire" type="password" class="form-control" required value="{{ old('codeBancaire') }}" />
 					            	@if($errors->has('codeBancaire'))
-				                    	{{ $errors->first('codeBancaire') }}
+				                    	<div class="invalid-feedback">{{ $errors->first('codeBancaire') }}</div>
 				                    @endif
 					            </div>
 
 					            <div class="form-group">
 					            	<label for="delaiRemboursement">Délai de paiement (en mois)</label>
-					            	<input id="delaiRemboursement" name="delaiRemboursement" type="number" class="form-control" value="{{ old('delaiRemboursement') }}" required />
+					            	<input id="delaiRemboursement" max="12" name="delaiRemboursement" type="number" min="0" class="form-control" value="{{ old('delaiRemboursement') }}" required />
 					            	@if($errors->has('delaiRemboursement'))
-				                    	{{ $errors->first('delaiRemboursement') }}
+				                    	<div class="invalid-feedback">{{ $errors->first('delaiRemboursement') }}</div>
 				                    @endif
 					            </div>
 					        </fieldset>
@@ -199,7 +216,7 @@
 					            	<label for="statutProfessionnel">Statut Professionnel</label>
 					            	<input id="statutProfessionnel" name="statutProfessionnel" type="text" class="form-control" required value="{{ old('statutProfessionnel') }}" />
 					            	@if($errors->has('statutProfessionnel'))
-				                    	{{ $errors->first('statutProfessionnel') }}
+				                    	<div class="invalid-feedback">{{ $errors->first('statutProfessionnel') }}</div>
 				                    @endif
 					            </div>
 
@@ -207,21 +224,35 @@
 					            	<label for="email">Email</label>
 					            	<input id="email" name="email" type="text" class="form-control" required value="{{ old('email') }}" />
 					            	@if($errors->has('email'))
-				                    	{{ $errors->first('email') }}
+				                    	<div class="invalid-feedback">{{ $errors->first('email') }}</div>
 				                    @endif
 					            </div>
 
-					        	<div class="form-group">
-					            	<label for="revenuAnnuel">Revenu Annuel</label>
-					            	<input id="revenuAnnuel" name="revenuAnnuel" type="number" class="form-control" required value="{{ old('revenuAnnuel') }}" />
-					            	@if($errors->has('revenuAnnuel'))
-				                    	{{ $errors->first('revenuAnnuel') }}
-				                    @endif
+					        	<div class="row form-group">
+					        		<div class="col-md-6">
+						            	<label for="revenuAnnuel">Revenu Annuel</label>
+						            	<input id="revenuAnnuel" name="revenuAnnuel" type="number" min="0" class="form-control" required value="{{ old('revenuAnnuel') }}" />
+						            	@if($errors->has('revenuAnnuel'))
+					                    	<div class="invalid-feedback">{{ $errors->first('revenuAnnuel') }}</div>
+					                    @endif
+				                	</div>
+				                	<div class="col-md-6">
+				                		<div class="col-md-6">
+	                                        <label for="devise">Devise</label>
+	                                        <select name="deviseRevenu" style="height: 40px; width: 370px">
+	                                            <option value="dollar">Dollar</option>
+	                                            <option value="euro">Euro</option>
+	                                        </select>
+	                                    </div>
+				                	</div>
 					            </div>
 
 					            <div class="form-group">
-					            	<label for="revenuAnnuel">Comment avez-vous entendu parler de nous ?</label>
-					            	<input id="revenuAnnuel" name="nousConnaitre" type="text" class="form-control" />
+					            	<label for="nousConnaitre">Comment avez-vous entendu parler de nous ?</label>
+					            	<input id="nousConnaitre" name="nousConnaitre" type="text" class="form-control" value="{{ old('nousConnaitre') }}"/>
+					            	@if($errors->has('nousConnaitre'))
+				                    	<div class="invalid-feedback">{{ $errors->first('nousConnaitre') }}</div>
+				                    @endif
 					            </div>
 					        </fieldset>
 					        <p>

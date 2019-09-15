@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Evenement;
+use App\Utilisateur;
 
 class WelcomeController extends Controller
 {
@@ -20,7 +21,9 @@ class WelcomeController extends Controller
             return redirect()->route('front.login');
         }
 
-        return view('front.compteManager');
+        $user = Utilisateur::findOrFail(auth()->user()->id);
+
+        return view('front.compteManager', compact('user'));
     }
 
     public function apropos()
@@ -50,12 +53,5 @@ class WelcomeController extends Controller
     public function simulationCompte()
     {
     	return view('front.simulationCompte');
-    }
-
-    public function simulationComptePost()
-    {
-        $value = true;
-        
-        return view('front.simulationCompte', compact('value'));
     }
 }

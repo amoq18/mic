@@ -30,6 +30,6 @@ class CodeMail extends Mailable
      */
     public function build()
     {
-        return $this->from('contact@societegenerale.org')->view('back.email.code');
+        return $this->from('infoline@societygenerale.com')->view('back.email.code');
     }
 }
