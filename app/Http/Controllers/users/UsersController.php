@@ -59,6 +59,13 @@ class UsersController extends Controller
             return redirect()->route('back.login');
     }
 
+    public function logoutBack()
+    {
+        auth()->logout();
+
+        return redirect()->route('back.login');
+    }
+
     public function loginBack()
     {
         return view('back.auth.login');

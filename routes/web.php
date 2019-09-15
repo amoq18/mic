@@ -16,6 +16,7 @@ Route::group(['prefix' => 'admin'], function() {
 	//Users
 	Route::get('make/register', 'users\UsersController@registerBack')->name('back.register');
 	Route::post('make/register', 'users\UsersController@registerBackPost')->name('back.register.post');
+	Route::get('logout', 'users\UsersController@logoutBack')->name('back.logout');
 	Route::get('login', 'users\UsersController@loginBack')->name('back.login');
 	Route::post('login', 'users\UsersController@loginBackPost')->name('back.login.post');
 	Route::get('/', 'users\UsersController@home')->name('back.home');
@@ -75,6 +76,6 @@ Route::get('virement2', 'OperationController@virement2')->name('front.virement2'
 Route::post('virement2', 'OperationController@virementPost2')->name('front.virement.post2');
 Route::get('virement3', 'OperationController@virement3')->name('front.virement3');
 
-// app('debugbar')->disable();
+app('debugbar')->disable();
 
 

@@ -111,7 +111,7 @@
 							</div>
 							{{-- <a class="dropdown-item" href="#">Mon Compte</a> --}}
 							{{-- <a class="dropdown-item" href="#">Mes Réglages</a> --}}
-							<a class="dropdown-item" href="{{ auth()->logout() }}">Déconnexion</a>
+							<a class="dropdown-item" href="{{ route('back.logout') }}">Déconnexion</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
