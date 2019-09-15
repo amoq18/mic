@@ -16,13 +16,11 @@
                         <!-- Form -->
                         <form action="{{ route('back.login.post') }}" method="POST">
                             @csrf
+                            @if($errors->all())
+                                <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px"> Erreur dans les informations</strong>
+                            @endif
                             <div class="form-group">
                                 <input class="form-control" @error('email') is-invalid @enderror name="email" value="{{ old('email') }}" required autocomplete="email" type="text" placeholder="Email">
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
 
                             <div class="form-group">

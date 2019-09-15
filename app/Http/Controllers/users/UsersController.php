@@ -79,7 +79,9 @@ class UsersController extends Controller
         ]);
 
         if($res){
-            return redirect()->route('back.home');
+            return redirect()->route('back.home')->withInput()->withErrors([
+                'error' => ''
+            ]);
         }
 
         return back()->withInput();
