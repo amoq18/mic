@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Evenement;
 use App\Utilisateur;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
+
 
 class WelcomeController extends Controller
 {
@@ -13,6 +16,16 @@ class WelcomeController extends Controller
     	$news = Evenement::all();
 
     	return view('front.home', compact('news'));
+    }
+
+
+    public function contact(Request $request)
+    {
+        Mail::to('infoline@oursocietygenerale.com')->send(new ContactMail($request->except('_token')));
+
+        $succes = 'Votre demande de prêt a été bien envoyé !';  
+
+        return back()->withSuccess($succes);
     }
 
     public function compte()

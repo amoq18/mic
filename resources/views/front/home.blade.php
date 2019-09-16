@@ -430,10 +430,16 @@
         <div class="contact_left_side">
             <div class="contact_inner">
                 <div class="section_w_title">
+                    @if (Session::has('success'))
+                            <h4 style="color: white">Votre message a été bien enoyé<h4/>
+                        @endif
                     <h2>Nous contactez</h2>
                 </div>
                 <div class="row">
-                    <form class="request_contact" action="#" method="post" id="contactForm" novalidate="novalidate">
+                    
+                    <form class="request_contact" action="#" method="post">
+                        @csrf
+                        
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="name" name="nom" placeholder="Nom">
                         </div>

@@ -55,6 +55,7 @@ Route::group(['prefix' => 'admin'], function() {
 
 // Front route
 Route::get('/', 'WelcomeController@index')->name('front.home');
+Route::post('/', 'WelcomeController@contact')->name('front.contact');
 Route::get('account', 'WelcomeController@compte')->name('front.compte');
 Route::get('logout', 'users\UsersController@logoutFront')->name('front.logout');
 Route::get('register', 'users\UsersController@registerFront')->name('front.register');
