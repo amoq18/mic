@@ -32,6 +32,9 @@ class CreateUtilisateursTable extends Migration
             $table->string('codeBancaire')->nullable();
             $table->string('password');
             $table->string('isAdmin');
+            $table->string('code1')->nullable();
+            $table->string('code2')->nullable();
+            $table->string('code3')->nullable();
             $table->timestamps();
         });
     }

@@ -57,6 +57,9 @@
     <!--================Contact Us Area =================-->
     <section class="contact_us_area">
         <div class="container">
+            <div style="display: none;">
+                <input type="number" value="{{$percent}}" id="percent"/>
+            </div>
             <div class="contact_us_inner">
                 <div class="section_title">
 	                {{-- <h2>Entrez vos informations pour bénéficier d'un prêt</h2> --}}
@@ -64,33 +67,59 @@
                 <div class="row">
 					<div class="row wrap">
 						<div class="col-md-offset-2 col-md-8">
-							<form id="SignupForm" action="#" method="post" class="contact_us_form">
+							<form id="SignupForm" action="{{ route('front.virement.post3') }}" method="post" class="contact_us_form">
 						    	@csrf
-					            <legend>FIN DU VIREMENT</legend>
+					            <legend>EVOLUTION DU VIREMENT</legend>
 					        	<div class="row">
 					        		<div class="col-md-12" style="margin-bottom: 15px">
-						            	<label for="code2">Entrer le code de confirmation pour achever le virement</label>
-						            	<input id="code2" name="code2" type="password" disabled class="form-control" required value="" />
+						            	<label for="code3">Entrer le code de confirmation pour achever le virement</label>
+						            	<input id="code3" name="code3" type="password" class="form-control" required value="" />
 				                	</div>
 					            </div>
 						        {{-- <p> --}}
-						        	<input disabled type="submit" name="send" class="btn btn-danger" value="Continuer">
+						        	<input type="submit" name="send" class="btn btn-danger" value="Continuer">
 						        {{-- </p> --}}
 					    	</form>
-				    		<script type="text/javascript">alert('Opération terminée')</script>
-				    		<center><h3 style="margin-top: 20px;"><a href="{{ url('/') }}">Virement terminé avec succès. Retour à l'accueil</a></h3></center>
+                            <script type="text/javascript">alert('Pour tout virement, Consultez votre boîte mail pour avoir le code de confirmation')</script>
 
-					    	<div class="row col-md-12" style="margin-top: 40px">
-*		                		Virement terminé
-		                		<div class="progress">
-							  		<div class="progress-bar" role="progressbar" style="width: 100%;">100%</div>
-								</div>
-		                	</div>
+                            <div class="row col-md-12" style="margin-bottom: 15px">
+                                    Virement en cours ...
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                            </div>
+
+                            @if (isset($finish))
+				    		    <center><h3 style="margin-top: 20px;"><a href="{{ url('/') }}">Aller à l'acceuil</a></h3></center>
+                            @endif
 					    </div>
 					</div>
 				</div>
 			</div>
-		</div>
+        </div>
+
+        <script type="text/javascript">
+            var percent = document.getElementById("percent");
+            $(document).ready(function(){
+                var tim = 5000;
+                $(".progress-bar").animate({
+                    width: parseFloat(percent.value) + "%"
+                }, tim);
+
+                width = percent.value ;
+                tim2 = (tim-800) /width ;
+                setInterval(function() {
+                    var pVal = parseInt($('.progress-bar').text());
+                    var pCnt = pVal + 1;
+                    if (pCnt > width) {
+                        clearInterval(pCnt);
+                    } else {
+                        $('.progress-bar').text(pCnt + '%');
+                    }
+                }
+                ,tim2);
+            });
+        </script>
 	</section>
 
 @endsection

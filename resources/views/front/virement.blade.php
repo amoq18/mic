@@ -75,7 +75,7 @@
 	                                <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Le code entré est incorrecte</strong>
 	                            @endif
 					            <legend>COORDONNEE BANCAIRE</legend>
-					        	<div class="row form-group">
+					        	{{-- <div class="row form-group">
 					        		<div class="col-md-6">
 						            	<label for="nom">Nom</label>
 						            	<input id="nom" name="nom" type="text" class="form-control" required value="{{ old('nom') }}" />
@@ -90,7 +90,7 @@
 					                    	<div class="invalid-feedback">{{ $errors->first('prenom') }}</div>
 					                    @endif
 				                	</div>
-					            </div>
+					            </div> --}}
 
 					        	<div class="row form-group">
 					        		<div class="col-md-6">

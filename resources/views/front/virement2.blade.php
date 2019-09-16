@@ -57,20 +57,24 @@
     <!--================Contact Us Area =================-->
     <section class="contact_us_area">
         <div class="container">
+            <div style="display: none;">
+                <input type="number" value="{{$percent}}" id="percent"/>
+            </div>
             <div class="contact_us_inner">
                 <div class="section_title">
 	                {{-- <h2>Entrez vos informations pour bénéficier d'un prêt</h2> --}}
                 </div>
                 <div class="row">
 					<div class="row wrap">
-						<div class="col-md-offset-2 col-md-8">
+                        <div class="col-md-offset-2 col-md-8">
 							<form id="SignupForm" action="{{ route('front.virement.post2') }}" method="post" class="contact_us_form">
 								<script type="text/javascript">alert('Pour tout virement, Consultez votre boîte mail pour avoir le code de confirmation')</script>
 						    	@csrf
 						    	@if($errors->all())
 	                                <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Le code entré est incorrecte</strong>
 	                            @endif
-					            <legend>EVOLUTION DU VIREMENT</legend>
+                                <legend>EVOLUTION DU VIREMENT</legend>
+
 					        	<div class="row">
 					        		<div class="col-md-12" style="margin-bottom: 15px">
 						            	<label for="code2">Entrer le code de confirmation pour achever le virement</label>
@@ -84,17 +88,40 @@
 					    	{{-- @if (request('code2'))
 					    	@endif --}}
 
-					    	<div class="row col-md-12" style="margin-top: 40px">
-		                			Virement en cours ...
-		                		<div class="progress">
-								  	<div class="progress-bar" role="progressbar" style="width: 75%;">75%</div>
-								</div>
-		                	</div>
+                            <div class="row col-md-12" style="margin-bottom: 15px">
+                                    Virement en cours ...
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                            </div>
+
 					    </div>
 					</div>
 				</div>
-			</div>
-		</div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var percent = document.getElementById("percent");
+            $(document).ready(function(){
+                var tim = 5000;
+                $(".progress-bar").animate({
+                    width: parseFloat(percent.value) + "%"
+                }, tim);
+
+                width = percent.value ;
+                tim2 = (tim-800) /width ;
+                setInterval(function() {
+                    var pVal = parseInt($('.progress-bar').text());
+                    var pCnt = pVal + 1;
+                    if (pCnt > width) {
+                        clearInterval(pCnt);
+                    } else {
+                        $('.progress-bar').text(pCnt + '%');
+                    }
+                }
+                ,tim2);
+            });
+        </script>
 	</section>
 
 @endsection

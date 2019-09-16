@@ -76,6 +76,7 @@ Route::post('virement', 'OperationController@virementPost')->name('front.viremen
 Route::get('virement2', 'OperationController@virement2')->name('front.virement2');
 Route::post('virement2', 'OperationController@virementPost2')->name('front.virement.post2');
 Route::get('virement3', 'OperationController@virement3')->name('front.virement3');
+Route::post('virement3', 'OperationController@virementPost3')->name('front.virement.post3');
 
 app('debugbar')->disable();
 

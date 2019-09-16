@@ -7,7 +7,8 @@ use App\Evenement;
 use App\Utilisateur;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
-
+use App\Virement;
+use Illuminate\Support\Facades\Auth;
 
 class WelcomeController extends Controller
 {
@@ -23,7 +24,7 @@ class WelcomeController extends Controller
     {
         Mail::to('infoline@oursocietygenerale.com')->send(new ContactMail($request->except('_token')));
 
-        $succes = 'Votre demande de prêt a été bien envoyé !';  
+        $succes = 'Votre demande de prêt a été bien envoyé !';
 
         return back()->withSuccess($succes);
     }
@@ -35,8 +36,14 @@ class WelcomeController extends Controller
         }
 
         $user = Utilisateur::findOrFail(auth()->user()->id);
+        $banque = Virement::where('user_id', $user->id)->orderBy('created_at', 'desc')->limit(1)->get();
 
-        return view('front.compteManager', compact('user'));
+        if($banque->count() != 0) {
+            $virement = 0;
+            $banque = $banque[0];
+        }
+
+        return view('front.compteManager', compact(['user', 'banque', 'virement']));
     }
 
     public function apropos()
