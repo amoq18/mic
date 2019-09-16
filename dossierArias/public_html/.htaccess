@@ -1,0 +1,7 @@
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW SSL_REDIRECT:geldexpress-info.com
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^geldexpress-info.com$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE SSL_REDIRECT:geldexpress-info.com
