@@ -3,7 +3,7 @@
         <div class="container">
             <div class="header_top_inner">
                 <div class="pull-left" style="margin: 15px">
-                    <a href="#"><i class="fa fa-envelope-o"></i>info@consultplus.com</a>
+                    <a href="#"><i class="fa fa-envelope-o"></i>infoline@oursocietygenerale.com</a>
                     <a href="https://m.facebook.com/Our-General-Society-110593493662269/?_rdr"><i class="fa fa-facebook"></i></a>
                 </div>
                 <div style="margin-top: 25px">
@@ -16,7 +16,7 @@
                     <a href="javascript:void()"  onclick="window.location.hash='#googtrans(sk)';location.reload();"><img src="{{ asset('assets/front/img/lang/sk.png') }} " align="center"> </a>&nbsp;
                     <a href="javascript:void()"  onclick="window.location.hash='#googtrans(sl)';location.reload();"><img src="{{ asset('assets/front/img/lang/sl.png') }} " align="center"> </a>&nbsp;
                     <a href="javascript:void()"  onclick="window.location.hash='#googtrans(mt)';location.reload();"><img src="{{ asset('assets/front/img/lang/mt.png') }} " align="center"> </a>&nbsp;
-                                                             
+
                      <!-- Code provided by Google -->
                     <div style="display:none">
                         <div id="google_translate_element"></div>
@@ -104,7 +104,7 @@
                         </li>
                         <li class="submenu dropdown">
                             <a href="{{ route('front.evenement.list') }}">Evènements</a>
-                        </li>    
+                        </li>
 
 
                         @if(auth()->guest())

@@ -12,7 +12,7 @@
                             <a href="javascript:void()"  onclick="window.location.hash='#googtrans(sk)';location.reload();"><img src="{{ asset('assets/front/img/lang/sk.png') }} " align="center"> </a>&nbsp;
                             <a href="javascript:void()"  onclick="window.location.hash='#googtrans(sl)';location.reload();"><img src="{{ asset('assets/front/img/lang/sl.png') }} " align="center"> </a>&nbsp;
                             <a href="javascript:void()"  onclick="window.location.hash='#googtrans(mt)';location.reload();"><img src="{{ asset('assets/front/img/lang/mt.png') }} " align="center"> </a>&nbsp;
-                                                                 
+
                             <!-- Code provided by Google -->
                             <div style="display:none">
                                 <div id="google_translate_element"></div>
@@ -107,7 +107,7 @@
                                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                            <a href="#" title="infoline@societygenerale.com">infoline@societygenerale.com</a>
+                                            <a href="#" title="infoline@societygenerale.com">infoline@oursocietygenerale.com</a>
                                         </div>
                                     </div>
                                     <div class="media">
