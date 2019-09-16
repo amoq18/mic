@@ -18,7 +18,7 @@ class CreateUtilisateursTable extends Migration
             $table->string('nom');
             $table->string('prenom')->nullable();
             $table->string('telephone')->nullable();
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('date_naissance')->nullable();
             $table->string('adresse')->nullable();
             $table->string('pays')->nullable();
