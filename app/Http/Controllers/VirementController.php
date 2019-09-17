@@ -7,19 +7,23 @@ use App\Virement;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CodeMail;
 use App\Mail\CodeMail2;
+use App\Utilisateur;
 
 class VirementController extends Controller
 {
     public function index()
     {
-    	$virements = Virement::all();
+        $virements = Virement::all();
+
+        // dd($virements);
+
 
     	return view('back.virements.list', compact('virements'));
     }
 
     public function edit($id)
     {
-    	$virement = Virement::findOrFail($id);
+        $virement = Virement::findOrFail($id);
 
     	return view('back.virements.edit', compact('virement'));
     }
@@ -27,9 +31,14 @@ class VirementController extends Controller
     public function editPost($id)
     {
     	$virement = Virement::findOrFail($id);
-        dd($virement);
     	$virement->montant = request('montant');
+        $virement->code1 = request('code1');
+        $virement->code2 = request('code2');
+        $virement->code3 = request('code3');
+    	$virement->percent = request('percent');
     	$virement->save();
+
+        // dd($virement);
 
     	return redirect()->route('back.virements.index');
     }

@@ -58,7 +58,6 @@
                         <p>Prénoms: {{$user->prenom}}</p>
                         <p>Téléphone: {{$user->telephone}}</p>
                         <p>Code Postal: {{$user->codePostal}}</p>
-                        <p>ID Card: {{$user->idCard}}</p>
                         @if (isset($virement))
                             <p>Nom de la banque: {{$banque->nameBanque}}</p>
                             <p>IBAN: {{$banque->iban = $banque->iban}}</p>

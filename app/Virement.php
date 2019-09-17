@@ -11,7 +11,10 @@ class Virement extends Model
 		'bicswift',
 		'nameBanque',
 		'montant',
-		'code',
 		'devise',
+		'code1',
+		'code2',
+		'code3',
+		'percent',
     ];
 }

@@ -13,14 +13,14 @@ class UsersController extends Controller
         if(auth()->guest()){
             return redirect()->route('back.login');
         }
-        
+
         return view('back.backoffice');
     }
 
     public function list()
     {
         $clients = Utilisateur::all()->where('isAdmin', 0);
-        
+
         return view('back.customers.list', compact('clients'));
     }
 
@@ -104,14 +104,8 @@ class UsersController extends Controller
             'date_naissance' => 'required',
             'adresse' => 'required',
             'pays' => 'required',
-            'ville' => 'required',
-            'region' => 'required',
             'codePostal' => 'required',
-            'modePaie' => 'required',
-            'idCard' => 'required|max:50',
             'devise' => 'required',
-            'montantCompte' => 'required',
-            'codeBancaire' => 'required|max:50',
             'password' => 'confirmed|required|min:8',
         ]);
 
@@ -122,16 +116,11 @@ class UsersController extends Controller
         $users->date_naissance = request('date_naissance');
         $users->adresse = request('adresse');
         $users->pays = request('pays');
-        $users->ville = request('ville');
-        $users->region = request('region');
         $users->codePostal = request('codePostal');
-        $users->modePaie = request('modePaie');
-        $users->idCard = request('idCard');
         $users->devise = request('devise');
-        $users->montantCompte = request('montantCompte');
-        $users->codeBancaire = request('codeBancaire');
         $users->password = bcrypt(request('password'));
         $users->isAdmin = 0;
+        $users->montantCompte = 0;
         $users->save();
 
         // return back()->with('success', 'Merci pour votre inscription !');
@@ -157,7 +146,7 @@ class UsersController extends Controller
         ]);
 
         if($res){
-            return redirect()->route('front.virement');
+            return redirect()->route('front.compte');
         }
 
         return back()->withInput()->withErrors([

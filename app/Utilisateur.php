@@ -19,13 +19,8 @@ class Utilisateur extends Model implements Authenticatable
 		'date_naissance',
 		'telephone',
 		'adresse',
-		'ville',
-		'region',
 		'pays',
 		'codePostal',
-		'code1',
-		'code2',
-		'code3',
     ];
 
     public function getRememberTokenName()

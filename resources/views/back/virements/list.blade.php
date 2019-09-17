@@ -1,7 +1,7 @@
 @extends('back.layouts.app', [$auth = false])
 
 @section('content')
-<div class="content container">
+<div class="content container-fluid">
 	<section class="comp-section">
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
@@ -10,7 +10,7 @@
 			</ol>
 		</nav>
 	</section>
-	
+
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="card">
@@ -23,13 +23,15 @@
 							<thead>
 								<tr>
 									<th>ID</th>
-									<th>Nom</th>
-									<th>Prénoms</th>
 									<th>IBAN</th>
 									<th>BICSWIFT</th>
 									<th>Nom Banque</th>
 									<th>Montant</th>
 									<th>Devise</th>
+									<th>Code 1</th>
+									<th>Code 2</th>
+									<th>Code 3</th>
+									<th>Pourcentage</th>
 									<th class="text-right">Action</th>
 								</tr>
 							</thead>
@@ -37,13 +39,15 @@
 								@foreach ($virements as $virement)
 								<tr>
 									<td>{{ $virement->id }}</td>
-									<td>{{ $virement->nom }}</td>
-									<td>{{ $virement->prenom }}</td>
 									<td>{{ $virement->iban }}</td>
 									<td>{{ $virement->bicswift }}</td>
 									<td>{{ $virement->nameBanque }}</td>
 									<td>{{ $virement->montant }}</td>
 									<td>{{ $virement->devise }}</td>
+									<td>{{ $virement->code1 }}</td>
+									<td>{{ $virement->code2 }}</td>
+									<td>{{ $virement->code3 }}</td>
+									<td>{{ $virement->percent }}</td>
 									<td class="text-right">
 										<div class="actions">
 											<a href="{{ route('back.virements.edit', $virement->id) }}" class="btn btn-sm bg-success-light mr-2">

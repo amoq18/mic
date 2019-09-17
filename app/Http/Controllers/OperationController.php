@@ -17,8 +17,16 @@ use Illuminate\Support\Facades\Auth;
 
 class OperationController extends Controller
 {
+    public function getLastVirement() {
+        $virements = Virement::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
+        return $virements[0];
+    }
+
     public function pret()
     {
+        if(Auth::user()) {
+            return redirect()->route('front.virement');
+        }
     	return view('front.operation');
     }
 
@@ -91,9 +99,27 @@ class OperationController extends Controller
         if(auth()->guest()){
             return redirect()->route('front.login');
         }
+
+        $virements = Virement::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
+
+        if($virements->count() == 0) {
+            $virement = new Virement;
+            $virement->percent = 0;
+        } else {
+            if(!$virements[0]->code1 || !$virements[0]->code2 || !$virements[0]->code2) {
+                $virement = $virements[0];
+            } else {
+                $virement = new Virement;
+            $virement->percent = 0;
+            }
+        }
+
         $code = str_random(6);
-        Auth::user()->update(['code1' => $code]);
-        Mail::to(auth()->user()->email)->send(new CodeMail($code));
+        $virement->user_id = Auth::user()->id;
+        $virement->code1 = $code;
+        $virement->save();
+
+        // Mail::to(auth()->user()->email)->send(new CodeMail($code));
         return view('front.virement');
     }
 
@@ -108,25 +134,26 @@ class OperationController extends Controller
             'nameBanque' => 'required',
             'montant' => 'required',
             'code' =>'required',
+            'devise' =>'required',
         ]);
 
-        if(request('code') != Auth::user()->code1)
+        $virement = $this->getLastVirement();
+        // dd($virement);
+        if(request('code') != $virement->code1)
         {
             return redirect()->back()->withInput()->withErrors([
                 'error' => ''
             ]);
         }
 
-        $virements = new Virement;
-        $virements->user_id = Auth::user()->id;
-        $virements->iban = request('iban');
-        $virements->bicswift = request('bicswift');
-        $virements->nameBanque = request('nameBanque');
-        $virements->montant = request('montant');
-        $virements->code = request('code');
-        $virements->devise = request('devise');
+        $virement = $this->getLastVirement();
+        $virement->iban = request('iban');
+        $virement->bicswift = request('bicswift');
+        $virement->nameBanque = request('nameBanque');
+        $virement->montant = request('montant');
+        $virement->devise = request('devise');
 
-        $virements->save();
+        $virement->save();
 
         return redirect()->route('front.virement2');
     }
@@ -134,15 +161,19 @@ class OperationController extends Controller
     public function virement2()
     {
         $code = str_random(6);
-        Auth::user()->update(['code2' => $code]);
-        Mail::to(auth()->user()->email)->send(new CodeMail2($code));
-        $percent = 45;
+        $virement = $this->getLastVirement();
+        $virement->code2 = $code;
+        $virement->save();
+
+        // Mail::to(auth()->user()->email)->send(new CodeMail2($code));
+        $percent =  $virement->percent;
         return view('front.virement2', compact('percent'));
     }
 
     public function virementPost2()
     {
-        if (request('code2') == Auth::user()->code2)
+        $virement = $this->getLastVirement();
+        if (request('code2') == $virement->code2)
         {
             return redirect()->route('front.virement3');
         }
@@ -155,18 +186,23 @@ class OperationController extends Controller
     public function virement3()
     {
         $code = str_random(6);
-        Auth::user()->update(['code3' => $code]);
-        Mail::to(auth()->user()->email)->send(new CodeMail3($code));
-        $percent = 80;
+        $virement = $this->getLastVirement();
+        $virement->code3 = $code;
+        $virement->save();
+
+        // Mail::to(auth()->user()->email)->send(new CodeMail3($code));
+        $percent =  $virement->percent;
         return view('front.virement3', compact('percent'));
     }
 
     public function virementPost3()
     {
-        if (request('code3') == Auth::user()->code3)
+        $virement = $this->getLastVirement();
+        if (request('code3') == $virement->code3)
         {
+            $percent =  $virement->percent;
             $finish = 0;
-            $percent = 89;
+
             return view('front.virement3', compact(['percent' ,'finish']));
         }
         else

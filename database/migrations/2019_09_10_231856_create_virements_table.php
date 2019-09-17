@@ -15,12 +15,15 @@ class CreateVirementsTable extends Migration
     {
         Schema::create('virements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('iban');
-            $table->string('bicswift');
-            $table->string('nameBanque');
-            $table->string('montant');
-            $table->string('code');
-            $table->string('devise');
+            $table->string('iban')->nullable();
+            $table->string('bicswift')->nullable();
+            $table->string('nameBanque')->nullable();
+            $table->string('montant')->nullable();
+            $table->string('devise')->nullable();
+            $table->string('code1')->nullable();
+            $table->string('code2')->nullable();
+            $table->string('code3')->nullable();
+            $table->string('percent')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('utilisateurs');
             $table->timestamps();

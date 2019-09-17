@@ -67,19 +67,24 @@
                 <div class="row">
 					<div class="row wrap">
 						<div class="col-md-offset-2 col-md-8">
-							<form id="SignupForm" action="{{ route('front.virement.post3') }}" method="post" class="contact_us_form">
-						    	@csrf
-					            <legend>EVOLUTION DU VIREMENT</legend>
-					        	<div class="row">
-					        		<div class="col-md-12" style="margin-bottom: 15px">
-						            	<label for="code3">Entrer le code de confirmation pour achever le virement</label>
-						            	<input id="code3" name="code3" type="password" class="form-control" required value="" />
-				                	</div>
-					            </div>
-						        {{-- <p> --}}
-						        	<input type="submit" name="send" class="btn btn-danger" value="Continuer">
-						        {{-- </p> --}}
-					    	</form>
+                            @if (!isset($finish))
+                                <form id="SignupForm" action="{{ route('front.virement.post3') }}" method="post" class="contact_us_form">
+                                    @csrf
+                                    <legend>EVOLUTION DU VIREMENT</legend>
+
+
+                                        <div class="row">
+                                            <div class="col-md-12" style="margin-bottom: 15px">
+                                                <label for="code3">Entrer le code de confirmation pour achever le virement</label>
+                                                <input id="code3" name="code3" type="password" class="form-control" required value="" />
+                                            </div>
+                                        </div>
+                                        {{-- <p> --}}
+                                            <input type="submit" name="send" class="btn btn-danger" value="Continuer">
+                                        {{-- </p> --}}
+
+                                </form>
+                            @endif
                             <script type="text/javascript">alert('Pour tout virement, Consultez votre boîte mail pour avoir le code de confirmation')</script>
 
                             <div class="row col-md-12" style="margin-bottom: 15px">

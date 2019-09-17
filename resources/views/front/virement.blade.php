@@ -136,7 +136,7 @@
 				                	</div>
 				                	<div class="col-md-6">
                                         <label for="devise">Devise</label>
-                                        <select name="devise" style="height: 40px; width: 370px">
+                                        <select name="devise" style="height: 40px; width: 370px" class="form-control">
                                             <option value="dollar">Dollar</option>
                                             <option value="euro">Euro</option>
                                         </select>
