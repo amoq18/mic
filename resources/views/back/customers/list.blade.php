@@ -6,11 +6,11 @@
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Products</li>
+				<li class="breadcrumb-item active" aria-current="page">Clients</li>
 			</ol>
 		</nav>
 	</section>
-	
+
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="card">
@@ -22,25 +22,34 @@
 						<table class="datatable table table-stripped">
 							<thead>
 								<tr>
-									<th>Noms</th>
+									<th>Noms et Prénom(s)</th>
 									<th>Emails</th>
 									<th>Pays</th>
-									<th>Mode de paiement</th>
-									<th>Code bancaire</th>
+									<th>Téléphone</th>
 									<th>Montants</th>
-									<th>Devises</th>
+                                    <th>Devises</th>
+									<th class="text-right">Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								@foreach ($clients as $client)
 									<tr>
-										<td>{{ $client->nom }}</td>
+                                    <td>{{ $client->nom . ' ' . $client->prenom}} </td>
 										<td>{{ $client->email }}</td>
 										<td>{{ $client->pays }}</td>
-										<td>{{ $client->modePaie }}</td>
-										<td>{{ $client->codeBancaire }}</td>
+										<td>{{ $client->telephone }}</td>
 										<td>{{ $client->montantCompte }}</td>
-										<td>{{ $client->devise }}</td>
+                                        <td>{{ $client->devise }}</td>
+                                        <td class="text-right">
+                                            <div class="actions">
+                                                <a href="{{ route('back.clients.edit', $client->id) }}" class="btn btn-sm bg-success-light mr-2">
+                                                    <i class="fe fe-pencil"></i> Editer
+                                                </a>
+                                                <a href="{{ route('back.clients.delete', $client->id) }}" class="btn btn-sm bg-danger-light">
+                                                    <i class="fe fe-trash"></i> Supprimer
+                                                </a>
+                                            </div>
+                                        </td>
 									</tr>
 								@endforeach
 							</tbody>

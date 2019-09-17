@@ -41,6 +41,9 @@ Route::group(['prefix' => 'admin'], function() {
 	//Clients
 	Route::group(['prefix' => 'clients'], function() {
 		Route::get('/', 'users\UsersController@list')->name('back.clients.index');
+		Route::get('{id}/edit', 'users\UsersController@edit')->name('back.clients.edit');
+		Route::post('{id}/edit', 'users\UsersController@editPost')->name('back.clients.edit.post');
+		Route::get('{id}/delete', 'users\UsersController@delete')->name('back.clients.delete');
 	});
 
 

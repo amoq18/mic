@@ -23,9 +23,10 @@
 							<thead>
 								<tr>
 									<th>ID</th>
+									<th>Client</th>
 									<th>IBAN</th>
 									<th>BICSWIFT</th>
-									<th>Nom Banque</th>
+									<th>Banque</th>
 									<th>Montant</th>
 									<th>Devise</th>
 									<th>Code 1</th>
@@ -39,6 +40,7 @@
 								@foreach ($virements as $virement)
 								<tr>
 									<td>{{ $virement->id }}</td>
+									<td>{{ $virement->user->nom[0] . '. ' . $virement->user->prenom }}</td>
 									<td>{{ $virement->iban }}</td>
 									<td>{{ $virement->bicswift }}</td>
 									<td>{{ $virement->nameBanque }}</td>

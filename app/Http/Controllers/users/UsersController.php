@@ -24,6 +24,40 @@ class UsersController extends Controller
         return view('back.customers.list', compact('clients'));
     }
 
+    public function edit($id)
+    {
+        $user = Utilisateur::findOrFail($id);
+
+    	return view('back.customers.edit', compact('user'));
+    }
+
+    public function editPost($id)
+    {
+    	$user = Utilisateur::findOrFail($id);
+    	$user->nom = request('nom');
+        $user->prenom = request('prenom');
+        $user->telephone = request('telephone');
+        $user->email = request('email');
+        $user->date_naissance = request('date_naissance');
+        $user->adresse = request('adresse');
+        $user->pays = request('pays');
+        $user->codePostal = request('codePostal');
+        $user->devise = request('devise');
+        $user->montantCompte = request('montantCompte');
+        $user->password = bcrypt(request('password'));
+    	$user->save();
+
+    	return redirect()->route('back.clients.index');
+    }
+
+    public function delete($id)
+    {
+    	$user = Utilisateur::findOrFail($id);
+    	$user->delete();
+
+    	return redirect()->route('back.clients.index');
+    }
+
     public function logoutFront()
     {
         auth()->logout();

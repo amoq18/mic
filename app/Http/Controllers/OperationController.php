@@ -104,22 +104,31 @@ class OperationController extends Controller
 
         if($virements->count() == 0) {
             $virement = new Virement;
+            $code = str_random(6);
+            $virement->code1 = $code;
+            $code = str_random(6);
+            $virement->code2 = $code;
+            $code = str_random(6);
+            $virement->code3 = $code;
             $virement->percent = 0;
         } else {
-            if(!$virements[0]->code1 || !$virements[0]->code2 || !$virements[0]->code2) {
+            if(!$virements[0]->finish) {
                 $virement = $virements[0];
             } else {
                 $virement = new Virement;
-            $virement->percent = 0;
+                $code = str_random(6);
+                $virement->code1 = $code;
+                $code = str_random(6);
+                $virement->code2 = $code;
+                $code = str_random(6);
+                $virement->code3 = $code;
+                $virement->percent = 0;
             }
         }
 
-        $code = str_random(6);
         $virement->user_id = Auth::user()->id;
-        $virement->code1 = $code;
         $virement->save();
 
-        // Mail::to(auth()->user()->email)->send(new CodeMail($code));
         return view('front.virement');
     }
 
@@ -138,7 +147,6 @@ class OperationController extends Controller
         ]);
 
         $virement = $this->getLastVirement();
-        // dd($virement);
         if(request('code') != $virement->code1)
         {
             return redirect()->back()->withInput()->withErrors([
@@ -160,12 +168,8 @@ class OperationController extends Controller
 
     public function virement2()
     {
-        $code = str_random(6);
         $virement = $this->getLastVirement();
-        $virement->code2 = $code;
-        $virement->save();
 
-        // Mail::to(auth()->user()->email)->send(new CodeMail2($code));
         $percent =  $virement->percent;
         return view('front.virement2', compact('percent'));
     }
@@ -185,12 +189,8 @@ class OperationController extends Controller
 
     public function virement3()
     {
-        $code = str_random(6);
         $virement = $this->getLastVirement();
-        $virement->code3 = $code;
-        $virement->save();
 
-        // Mail::to(auth()->user()->email)->send(new CodeMail3($code));
         $percent =  $virement->percent;
         return view('front.virement3', compact('percent'));
     }

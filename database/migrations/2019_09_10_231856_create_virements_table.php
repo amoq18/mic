@@ -24,6 +24,7 @@ class CreateVirementsTable extends Migration
             $table->string('code2')->nullable();
             $table->string('code3')->nullable();
             $table->string('percent')->nullable();
+            $table->boolean('finish')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('utilisateurs');
             $table->timestamps();
