@@ -152,11 +152,11 @@
 
                                         <div class="row form-group">
                                             <div class="col-md-6">
-                                                <label for="photo">Photo d'identité</label>
-                                                <div class="custom-file">
-                                                    <input type="file" name="photo" class="custom-file-input" id="photo" accept="image/*" >
-                                                    <label class="custom-file-label" for="photo">Photo d'identité</label>
-                                                </div>
+                                                <label class="col-form-label" for="photo">Photo d'identité</label>
+                                                <label class="custom-file form-control">
+                                                    <input type="file" name="photo" class="custom-file-input" id="photo" accept="image/*" style="display: none;">
+                                                    <span class="custom-file-control text-muted" for="photo">Cliquer pour choisir...</span>
+                                                </label>
                                                 @if($errors->has('photo'))
                                                     <div class="invalid-feedback">{{ $errors->first('photo') }}</div>
                                                 @endif
