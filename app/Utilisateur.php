@@ -21,10 +21,16 @@ class Utilisateur extends Model implements Authenticatable
 		'adresse',
 		'pays',
 		'codePostal',
+		'photo_url',
     ];
 
     public function getRememberTokenName()
     {
         return '';
+    }
+
+    public function virements()
+    {
+        return $this->hasMany('App\Virement', 'user_id');
     }
 }

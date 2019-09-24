@@ -16,5 +16,11 @@ class Virement extends Model
 		'code2',
 		'code3',
 		'percent',
+		'finish',
     ];
+
+    public function utilisateur()
+    {
+        return $this->belongsTo('App\Utilisateur');
+    }
 }

@@ -27,6 +27,7 @@ class CreateUtilisateursTable extends Migration
             $table->string('montantCompte')->nullable();
             $table->string('password');
             $table->string('isAdmin');
+            $table->string('photo_url')->nullable();
             $table->string('percent')->nullable();
             $table->timestamps();
         });

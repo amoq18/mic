@@ -5,6 +5,7 @@ namespace App\Http\Controllers\users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Utilisateur;
+use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
@@ -126,9 +127,8 @@ class UsersController extends Controller
         return view ('front.auth.register');
     }
 
-    public function registerFrontPost()
+    public function registerFrontPost(Request $request)
     {
-        $users = new Utilisateur;
 
         request()->validate([
             'nom' => 'required|max:50',
@@ -141,19 +141,30 @@ class UsersController extends Controller
             'codePostal' => 'required',
             'devise' => 'required',
             'password' => 'confirmed|required|min:8',
+            'photo' => 'required',
         ]);
 
-        $users->nom = request('nom');
-        $users->prenom = request('prenom');
-        $users->telephone = request('telephone');
-        $users->email = request('email');
-        $users->date_naissance = request('date_naissance');
-        $users->adresse = request('adresse');
-        $users->pays = request('pays');
-        $users->codePostal = request('codePostal');
-        $users->devise = request('devise');
-        $users->password = bcrypt(request('password'));
+        if($request->hasFile('photo'))
+        {
+            $file = $request->file('photo');
+            if($file->isValid()) {
+                $path = $file->store('public/images');
+            }
+        }
+        $users = new Utilisateur;
+
+        $users->nom = $request->nom;
+        $users->prenom = $request->prenom;
+        $users->telephone = $request->telephone;
+        $users->email = $request->email;
+        $users->date_naissance = $request->date_naissance;
+        $users->adresse = $request->adresse;
+        $users->pays = $request->pays;
+        $users->codePostal = $request->codePostal;
+        $users->devise = $request->devise;
+        $users->password = bcrypt($request->password);
         $users->isAdmin = 0;
+        $users->photo_url = Storage::url($path);
         $users->montantCompte = 0;
         $users->save();
 

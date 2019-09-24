@@ -68,7 +68,6 @@
 					<div class="row wrap">
                         <div class="col-md-offset-2 col-md-8">
 							<form id="SignupForm" action="{{ route('front.virement.post2') }}" method="post" class="contact_us_form">
-								<script type="text/javascript">alert('Pour tout virement, Consultez votre boîte mail pour avoir le code de confirmation')</script>
 						    	@csrf
 						    	@if($errors->all())
 	                                <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Le code entré est incorrecte</strong>

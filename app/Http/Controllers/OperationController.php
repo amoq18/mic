@@ -104,24 +104,12 @@ class OperationController extends Controller
 
         if($virements->count() == 0) {
             $virement = new Virement;
-            $code = str_random(6);
-            $virement->code1 = $code;
-            $code = str_random(6);
-            $virement->code2 = $code;
-            $code = str_random(6);
-            $virement->code3 = $code;
             $virement->percent = 0;
         } else {
             if(!$virements[0]->finish) {
                 $virement = $virements[0];
             } else {
                 $virement = new Virement;
-                $code = str_random(6);
-                $virement->code1 = $code;
-                $code = str_random(6);
-                $virement->code2 = $code;
-                $code = str_random(6);
-                $virement->code3 = $code;
                 $virement->percent = 0;
             }
         }
@@ -150,7 +138,7 @@ class OperationController extends Controller
         if(request('code') != $virement->code1)
         {
             return redirect()->back()->withInput()->withErrors([
-                'error' => ''
+                'error' => 'Code de confirmation incorrect'
             ]);
         }
 
@@ -183,7 +171,7 @@ class OperationController extends Controller
         }
         else
         {
-            return redirect()->back()->withErrors(['error' => '']);
+            return redirect()->back()->withErrors(['error' => 'Code de confirmation incorrect']);
         }
     }
 
@@ -202,12 +190,14 @@ class OperationController extends Controller
         {
             $percent =  $virement->percent;
             $finish = 0;
+            $virement->finish = true;
+            $virement->save();
 
             return view('front.virement3', compact(['percent' ,'finish']));
         }
         else
         {
-            return redirect()->back()->withErrors(['error' => '']);
+            return redirect()->back()->withErrors(['error' => 'Code de confirmation incorrect']);
         }
     }
 }

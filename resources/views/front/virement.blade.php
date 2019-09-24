@@ -65,7 +65,6 @@
 					<div class="row wrap">
 						<div class="col-md-offset-2 col-md-8">
 							<form id="SignupForm" action="{{ route('front.virement.post') }}" method="post" class="contact_us_form">
-								<script type="text/javascript">alert('Pour tout virement, Consultez votre boîte mail pour avoir le code de confirmation')</script>
 						    	@csrf
 						    	{{-- @if (Session::has('success'))
 						    		<script type="text/javascript">alert('Votre demande de prêt a été bien envoyée. Consultez votre mail dans les prochaines 48 heures. Nous vous contacterons afin de donner une suite a votre demande de pret. Il se peut que notre message soit dans les spams, verifiez donc.')</script>

@@ -24,6 +24,13 @@
 					<h4 class="card-title">Modifier un client</h4>
 				</div>
 				<div class="card-body">
+                    <div class="row">
+                        <div class="d-flex mb-3 justify-content-center mx-auto">
+                            <div class="text-center ">
+                                <img src="{{ asset($user->photo_url) }}" alt="Photo d'identité" width="450" height="450" class="">
+                            </div>
+                        </div>
+                    </div>
 					<form method="post" action="{{ route('back.clients.edit.post', $user->id) }}">
 						@csrf
 						<div class="form-row">

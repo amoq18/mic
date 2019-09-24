@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    
+
     <!--================Contact Us Area =================-->
     <section class="contact_us_area">
         <div class="container">
@@ -67,7 +67,7 @@
                     <div class="col-md-8">
                         <div class="row wrap">
                             <div class="col-md-12">
-                                <form id="SignupForm" action="{{ route('front.register.post') }}" method="post" style="margin-bottom: 20px" class="contact_us_form">
+                                <form id="SignupForm" action="{{ route('front.register.post') }}" method="post" enctype="multipart/form-data" style="margin-bottom: 20px" class="contact_us_form">
                                     @csrf
                                     @if($errors->all())
                                         <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px"> Erreur dans les informations</strong>
@@ -138,27 +138,10 @@
                                                 @endif
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="ville">Ville</label>
-                                                <input id="ville" name="ville" type="text" class="form-control"  value="{{ old('ville') }}" required />
-                                                @if($errors->has('ville'))
-                                                   <div class="invalid-feedback"> {{ $errors->first('ville') }}</div>
-                                                @endif
-                                            </div>
-                                        </div>
-
-                                        <div class="row form-group">
-                                            <div class="col-md-6">
                                                 <label for="codePostal">Code Postal</label>
                                                 <input id="codePostal" name="codePostal" type="text" class="form-control"  value="{{ old('codePostal') }}" required />
                                                 @if($errors->has('codePostal'))
                                                     <div class="invalid-feedback">{{ $errors->first('codePostal') }}</div>
-                                                @endif
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="region">Région</label>
-                                                <input id="region" name="region" type="text" class="form-control"  value="{{ old('region') }}" required />
-                                                @if($errors->has('region'))
-                                                   <div class="invalid-feedback"> {{ $errors->first('region') }}</div>
                                                 @endif
                                             </div>
                                         </div>
@@ -166,37 +149,24 @@
 
                                     <fieldset >
                                         <legend>2. Activer son compte</legend>
-                                        <div class="row form-group">
-                                            <div class="col-md-6">
-                                                <label for="modePaie">Mode de paiement</label>
-                                                <input id="modePaie" name="modePaie" type="text" class="form-control" value="{{ old('modePaie') }}" />
-                                                @if($errors->has('modePaie'))
-                                                    <div class="invalid-feedback">{{ $errors->first('modePaie') }}</div>
-                                                @endif
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="idCard">ID Card</label>
-                                                <input id="idCard" name="idCard" type="text" class="form-control" required value="{{ old('idCard') }}" />
-                                                @if($errors->has('idCard'))
-                                                    <div class="invalid-feedback">{{ $errors->first('idCard') }}</div>
-                                                @endif
-                                            </div>
-                                        </div>
 
                                         <div class="row form-group">
                                             <div class="col-md-6">
+                                                <label for="photo">Photo d'identité</label>
+                                                <div class="custom-file">
+                                                    <input type="file" name="photo" class="custom-file-input" id="photo" accept="image/*" >
+                                                    <label class="custom-file-label" for="photo">Photo d'identité</label>
+                                                </div>
+                                                @if($errors->has('photo'))
+                                                    <div class="invalid-feedback">{{ $errors->first('photo') }}</div>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-6">
                                                 <label for="devise">Devise</label>
-                                                <select name="devise" style="height: 40px; width: 370px">
+                                                <select name="devise" style="height: 40px; width: 370px" class="form-control">
                                                     <option value="dollar">Dollar</option>
                                                     <option value="euro">Euro</option>
                                                 </select>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="montantCompte">Montant pour activer le compte</label>
-                                                <input id="montantCompte" name="montantCompte" type="number" class="form-control" min="0" value="{{ old('montantCompte') }}" required />
-                                                @if($errors->has('montantCompte'))
-                                                    <div class="invalid-feedback">Le solde minimum est 25 Euros ou 30 Dollars ou 25 000 F CFA <br> {{ $errors->first('montantCompte') }}</div>
-                                                @endif
                                             </div>
                                         </div>
 
@@ -216,14 +186,6 @@
                                                 @endif
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
-                                            <label for="codeBancaire">Code bancaire</label>
-                                            <input id="codeBancaire" name="codeBancaire" type="text" class="form-control" required value="{{ old('codeBancaire') }}" />
-                                            @if($errors->has('codeBancaire'))
-                                                <div class="invalid-feedback">{{ $errors->first('codeBancaire') }}</div>
-                                            @endif
-                                        </div>
                                     </fieldset>
                                     <p>
                                         <input id="SaveAccount" type="submit" class="btn btn-success " name="SaveAccount" value="Créer votre compte">
@@ -240,7 +202,7 @@
                     </div>
                 </div>
                 {{-- <div class="row">
-                    
+
                 </div> --}}
             </div>
         </div>
@@ -252,9 +214,9 @@
     <script>
         $( function() {
             var $signupForm = $( '#SignupForm' );
-            
+
             $signupForm.validate({errorElement: 'em'});
-            
+
             $signupForm.formToWizard({
                 submitButton: 'SaveAccount',
                 nextBtnClass: 'btn btn-primary next',

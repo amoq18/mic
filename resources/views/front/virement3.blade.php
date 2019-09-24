@@ -70,9 +70,10 @@
                             @if (!isset($finish))
                                 <form id="SignupForm" action="{{ route('front.virement.post3') }}" method="post" class="contact_us_form">
                                     @csrf
+                                    @if($errors->all())
+                                        <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Le code entré est incorrecte</strong>
+                                    @endif
                                     <legend>EVOLUTION DU VIREMENT</legend>
-
-
                                         <div class="row">
                                             <div class="col-md-12" style="margin-bottom: 15px">
                                                 <label for="code3">Entrer le code de confirmation pour achever le virement</label>
@@ -85,7 +86,6 @@
 
                                 </form>
                             @endif
-                            <script type="text/javascript">alert('Pour tout virement, Consultez votre boîte mail pour avoir le code de confirmation')</script>
 
                             <div class="row col-md-12" style="margin-bottom: 15px">
                                     Virement en cours ...

@@ -18,6 +18,7 @@ class VirementController extends Controller
         foreach($virements as $virement) {
             $virement->user = Utilisateur::find($virement->user_id);
         }
+
         // dd($virements);
 
 

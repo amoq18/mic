@@ -1,7 +1,7 @@
 @extends('back.layouts.app', [$auth = false])
 
 @section('content')
-<div class="content container">
+<div class="content container-fluid">
 	<section class="comp-section">
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
