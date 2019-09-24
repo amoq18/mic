@@ -41,9 +41,10 @@ class WelcomeController extends Controller
         if($banque->count() != 0) {
             $virement = 0;
             $banque = $banque[0];
+            return view('front.compteManager', compact(['user', 'banque', 'virement']));
         }
+        return view('front.compteManager', compact(['user', 'banque']));
 
-        return view('front.compteManager', compact(['user', 'banque', 'virement']));
     }
 
     public function apropos()
