@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-3 col-xs-6">
                             <aside class="f_widget about_widget">
-                                <img src="{{ asset('assets/front/img/logo.png') }}" alt="">
+                                <!--img src="{{ asset('assets/front/img/logo.png') }}" alt=""-->
                             </aside>
                         </div>
                         <div class="col-md-3 col-xs-6">
@@ -90,7 +90,7 @@
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                            <h4>Société Générale</h4>
+                                            <h4>APBL</h4>
                                             <p>54B, Tailstoi Town 5238 MT, La city, IA 522364</p>
                                         </div>
                                     </div>
@@ -115,7 +115,7 @@
                                             <i class="fa fa-facebook" aria-hidden="true"></i>
                                         </div>
                                         <div class="media-body">
-                                            <a href="https://m.facebook.com/Our-General-Society-110593493662269/?_rdr" target="_blank">SOCIETE GENERALE</a>
+                                            <a href="https://m.facebook.com/Our-General-Society-110593493662269/?_rdr" target="_blank">APBL</a>
                                         </div>
                                     </div>
                                 </div>

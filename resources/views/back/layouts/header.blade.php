@@ -3,11 +3,11 @@
 				<!-- Logo -->
 	            <div class="header-left">
 	                <a href="#" class="logo">
-						<img src="{{ asset('assets/back/img/logo.png') }}" alt="Logo">
+					<!--img class="img-fluid" src="{{ asset('assets/back/img/logo.png') }}" alt="Logo"-->
 					</a>
-					<a href="#l" class="logo logo-small">
+					<!--a href="#l" class="logo logo-small">
 						<img src="{{ asset('assets/back/img/logo-small.png') }}" alt="Logo" width="30" height="30">
-					</a>
+					</a-->
 	            </div>
 				<!-- /Logo -->
 				
