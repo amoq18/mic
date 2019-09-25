@@ -1,26 +1,26 @@
 <div class="header">
-			
+
 				<!-- Logo -->
 	            <div class="header-left">
 	                <a href="#" class="logo">
-						<img src="{{ asset('assets/back/img/logo.png') }}" alt="Logo">
+						<!-- <img src="{{ asset('assets/back/img/logo.png') }}" alt="Logo"> -->
 					</a>
 					<a href="#l" class="logo logo-small">
-						<img src="{{ asset('assets/back/img/logo-small.png') }}" alt="Logo" width="30" height="30">
+						<!-- <img src="{{ asset('assets/back/img/logo-small.png') }}" alt="Logo" width="30" height="30"> -->
 					</a>
 	            </div>
 				<!-- /Logo -->
-				
+
 {{-- 				<a href="javascript:void(0);" id="toggle_btn">
 					<i class="fe fe-text-align-left"></i>
 				</a> --}}
-				
+
 				{{-- <a class="mobile_btn" id="mobile_btn">
 					<i class="fa fa-bars"></i>
 				</a> --}}
-				
+
 				<ul class="nav user-menu">
-					
+
 					<!-- Notifications -->
 					<li class="nav-item dropdown noti-dropdown">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -93,7 +93,7 @@
 						</div>
 					</li>
 					<!-- /Notifications -->
-					
+
 					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -115,8 +115,8 @@
 						</div>
 					</li>
 					<!-- /User Menu -->
-					
+
 				</ul>
 				<!-- /Header Right Menu -->
-				
+
 	        </div>

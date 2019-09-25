@@ -49,20 +49,20 @@
     <div class="container">
         <div class="loginbox">
             <div class="login-left">
-                <img class="img-fluid" src="{{ asset('assets/back/img/logo.png') }}" alt="Logo">
+                <!-- <img class="img-fluid" src="{{ asset('assets/back/img/logo.png') }}" alt="Logo"> -->
             </div>
 
             <div class="login-right">
                 <div class="login-right-wrap">
                     <h1>Mot de passe oublié?</h1>
                     <p class="account-subtitle">Entrer votre adresse mail pour avoir le lien de réinitialisation de votre mot de passe</p>
-                    
+
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
                     <!-- Form -->
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
@@ -80,7 +80,7 @@
                         </div>
                     </form>
                     <!-- /Form -->
-                    
+
                     <div class="text-center dont-have">Vous vous rappelez de votre mot de passe? <a href="{{ route('login') }}">Connectez-vous ici</a></div>
                 </div>
             </div>

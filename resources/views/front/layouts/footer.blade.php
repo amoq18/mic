@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-3 col-xs-6">
                             <aside class="f_widget about_widget">
-                                <img src="{{ asset('assets/front/img/logo.png') }}" alt="">
+                                <!-- <img src="{{ asset('assets/front/img/logo.png') }}" alt=""> -->
                             </aside>
                         </div>
                         <div class="col-md-3 col-xs-6">
