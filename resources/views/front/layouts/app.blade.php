@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="{{ asset('') }}assets/front/img/fav-icon.png" type="image/x-icon" />
-    <title>SOCIETE GENERALE | Ma banque en ligne</title>
+    <title>APBL | Ma banque en ligne</title>
 
     <!-- Icon css link -->
     <link href="{{ asset('assets/front/css/font-awesome.min.css') }}" rel="stylesheet">

@@ -11,46 +11,46 @@
 
                     <!-- LAYER NR. 1 -->
                     <div class="slider_text_box">
-                        <div class="tp-caption tp-resizeme first_text" 
-                        id="slide-1586-layer-1" 
-                        data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                        data-y="['top','top','top','top']" data-voffset="['290','290','290','220','130']" 
+                        <div class="tp-caption tp-resizeme first_text"
+                        id="slide-1586-layer-1"
+                        data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                        data-y="['top','top','top','top']" data-voffset="['290','290','290','220','130']"
                         data-fontsize="['55','55','55','40','30']"
                         data-lineheight="['59','59','59','50','40']"
                         data-width="['550','550','550','400']"
                         data-height="none"
                         data-whitespace="normal"
-                        data-type="text" 
-                        data-responsive_offset="on" 
+                        data-type="text"
+                        data-responsive_offset="on"
                         data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-                        data-textAlign="['left','left','left','left']">Bienvenue à <br class="slider_br1" /> SOCIETE GENERALE</div>
-                        
-                        <div class="tp-caption tp-resizeme secand_text" 
-                            id="slide-1587-layer-2" 
-                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" data-voffset="['435','435','435','340','225']"  
+                        data-textAlign="['left','left','left','left']">Bienvenue à <br class="slider_br1" /> APBL</div>
+
+                        <div class="tp-caption tp-resizeme secand_text"
+                            id="slide-1587-layer-2"
+                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']" data-voffset="['435','435','435','340','225']"
                             data-fontsize="['18','18','18','18','16']"
                             data-lineheight="['26','26','26','26']"
                             data-width="['550','550','550','550','300']"
                             data-height="none"
                             data-whitespace="normal"
-                            data-type="text" 
+                            data-type="text"
                             data-responsive_offset="on"
                             data-transform_idle="o:1;"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
                         </div>
-                        
-                        <div class="tp-caption tp-resizeme slider_button" 
-                            id="slide-1587-layer-3" 
-                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" data-voffset="['525','525','525','425','330']" 
+
+                        <div class="tp-caption tp-resizeme slider_button"
+                            id="slide-1587-layer-3"
+                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']" data-voffset="['525','525','525','425','330']"
                             data-fontsize="['14','14','14','14']"
                             data-lineheight="['46','46','46','46']"
                             data-width="none"
                             data-height="none"
                             data-whitespace="nowrap"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
                             <a class="main_btn" href="#services">Découvrir</a>
                             <a class="main_b_btn" href="{{ route('front.operation') }}">Démarrer un prêt</a>
@@ -65,46 +65,46 @@
 
                     <!-- LAYER NR. 1 -->
                     <div class="slider_text_box">
-                        <div class="tp-caption tp-resizeme first_text" 
-                        id="slide-1586-layer-1" 
-                        data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                        data-y="['top','top','top','top']" data-voffset="['290','290','290','220','130']" 
+                        <div class="tp-caption tp-resizeme first_text"
+                        id="slide-1586-layer-1"
+                        data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                        data-y="['top','top','top','top']" data-voffset="['290','290','290','220','130']"
                         data-fontsize="['55','55','55','40','30']"
                         data-lineheight="['59','59','59','50','40']"
                         data-width="['550','550','550','400']"
                         data-height="none"
                         data-whitespace="normal"
-                        data-type="text" 
-                        data-responsive_offset="on" 
+                        data-type="text"
+                        data-responsive_offset="on"
                         data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-                        data-textAlign="['left','left','left','left']">Bienvenue à <br class="slider_br1" /> SOCIETE GENERALE</div>
-                        
-                        <div class="tp-caption tp-resizeme secand_text" 
-                            id="slide-1587-layer-2" 
-                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" data-voffset="['435','435','435','340','225']"  
+                        data-textAlign="['left','left','left','left']">Bienvenue à <br class="slider_br1" /> APBL</div>
+
+                        <div class="tp-caption tp-resizeme secand_text"
+                            id="slide-1587-layer-2"
+                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']" data-voffset="['435','435','435','340','225']"
                             data-fontsize="['18','18','18','18','16']"
                             data-lineheight="['26','26','26','26']"
                             data-width="['550','550','550','550','300']"
                             data-height="none"
                             data-whitespace="normal"
-                            data-type="text" 
+                            data-type="text"
                             data-responsive_offset="on"
                             data-transform_idle="o:1;"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
                         </div>
-                        
-                        <div class="tp-caption tp-resizeme slider_button" 
-                            id="slide-1587-layer-3" 
-                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" data-voffset="['525','525','525','425','330']" 
+
+                        <div class="tp-caption tp-resizeme slider_button"
+                            id="slide-1587-layer-3"
+                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']" data-voffset="['525','525','525','425','330']"
                             data-fontsize="['14','14','14','14']"
                             data-lineheight="['46','46','46','46']"
                             data-width="none"
                             data-height="none"
                             data-whitespace="nowrap"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
                             <a class="main_btn" href="#services">Découvrir</a>
                             <a class="main_b_btn" href="{{ route('front.operation') }}">Démarrer un prêt</a>
@@ -116,46 +116,46 @@
                 <img src="{{ asset('assets/front/img/home-slider/slider-1.jpg') }}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                     <!-- LAYER NR. 1 -->
                     <div class="slider_text_box">
-                        <div class="tp-caption tp-resizeme first_text" 
-                        id="slide-1586-layer-1" 
-                        data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                        data-y="['top','top','top','top']" data-voffset="['290','290','290','220','130']" 
+                        <div class="tp-caption tp-resizeme first_text"
+                        id="slide-1586-layer-1"
+                        data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                        data-y="['top','top','top','top']" data-voffset="['290','290','290','220','130']"
                         data-fontsize="['55','55','55','40','30']"
                         data-lineheight="['59','59','59','50','40']"
                         data-width="['550','550','550','400']"
                         data-height="none"
                         data-whitespace="normal"
-                        data-type="text" 
-                        data-responsive_offset="on" 
+                        data-type="text"
+                        data-responsive_offset="on"
                         data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-                        data-textAlign="['left','left','left','left']">Bienvenue à <br class="slider_br1" /> SOCIETE GENERALE</div>
-                        
-                        <div class="tp-caption tp-resizeme secand_text" 
-                            id="slide-1587-layer-2" 
-                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" data-voffset="['435','435','435','340','225']"  
+                        data-textAlign="['left','left','left','left']">Bienvenue à <br class="slider_br1" /> APBL</div>
+
+                        <div class="tp-caption tp-resizeme secand_text"
+                            id="slide-1587-layer-2"
+                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']" data-voffset="['435','435','435','340','225']"
                             data-fontsize="['18','18','18','18','16']"
                             data-lineheight="['26','26','26','26']"
                             data-width="['550','550','550','550','300']"
                             data-height="none"
                             data-whitespace="normal"
-                            data-type="text" 
+                            data-type="text"
                             data-responsive_offset="on"
                             data-transform_idle="o:1;"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
                         </div>
-                        
-                        <div class="tp-caption tp-resizeme slider_button" 
-                            id="slide-1587-layer-3" 
-                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" data-voffset="['525','525','525','425','330']" 
+
+                        <div class="tp-caption tp-resizeme slider_button"
+                            id="slide-1587-layer-3"
+                            data-x="['left','left','left','15','0']" data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']" data-voffset="['525','525','525','425','330']"
                             data-fontsize="['14','14','14','14']"
                             data-lineheight="['46','46','46','46']"
                             data-width="none"
                             data-height="none"
                             data-whitespace="nowrap"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]">
                             <a class="main_btn" href="#services">Découvrir</a>
                             <a class="main_b_btn" href="{{ route('front.operation') }}">Démarrer un prêt</a>
@@ -170,8 +170,8 @@
     <section class="business_box_area">
         <div class="container">
             <div class="sec_middle_title" id="news">
-                <h2><span>SOCIETE GENERALE</span> à votre disposition 24H/24 </h2>
-                <p>SOCIETE GENERALE est la meilleur banque pour résoudre vos problèmes financiers,
+                <h2><span>APBL</span> à votre disposition 24H/24 </h2>
+                <p>APBL est la meilleur banque pour résoudre vos problèmes financiers,
                 immobiliers, agricoles, etc en toute sécurité.</p>
             </div>
             <div class="row">
@@ -389,7 +389,7 @@
                             <i>“</i>
                         </div>
                         <div class="media-body">
-                            <p>Bonsoir, je suis Mme Eline, je suis à la recherche de prêt d’argent depuis plusieurs mois j’ai été 4 fois victimes d’escroquerie. J’avais des dettes et des factures à payer . Je croyais que c’était fini pour moi,qu’il n’y avait plus d’issue… Mais heureusement j’ai vu des témoignages faites par beaucoup des personnes sur SOCIETE GENERALE ,c’est ainsi que j’ai obtenu mon 1er prêt pour régler mes dettes et réaliser mon projet en toute sécurité.</p>
+                            <p>Bonsoir, je suis Mme Eline, je suis à la recherche de prêt d’argent depuis plusieurs mois j’ai été 4 fois victimes d’escroquerie. J’avais des dettes et des factures à payer . Je croyais que c’était fini pour moi,qu’il n’y avait plus d’issue… Mais heureusement j’ai vu des témoignages faites par beaucoup des personnes sur APBL ,c’est ainsi que j’ai obtenu mon 1er prêt pour régler mes dettes et réaliser mon projet en toute sécurité.</p>
                             <h4>- Eline Marie -</h4>
                             {{-- <h5>Ceo of Minda</h5> --}}
                         </div>
@@ -436,10 +436,10 @@
                     <h2>Nous contactez</h2>
                 </div>
                 <div class="row">
-                    
+
                     <form class="request_contact" action="#" method="post">
                         @csrf
-                        
+
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="name" name="nom" placeholder="Nom">
                         </div>

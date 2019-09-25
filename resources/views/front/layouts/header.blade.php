@@ -3,7 +3,7 @@
         <div class="container">
             <div class="header_top_inner">
                 <div class="pull-left" style="margin: 15px">
-                    <a href="#"><i class="fa fa-envelope-o"></i>infoline@oursocietygenerale.com</a>
+                    <a href="#"><i class="fa fa-envelope-o"></i>contact@apbl-info.com</a>
                     <a href="https://m.facebook.com/Our-General-Society-110593493662269/?_rdr"><i class="fa fa-facebook"></i></a>
                 </div>
                 <div style="margin-top: 25px">
@@ -74,7 +74,7 @@
                             </ul>
                         </li>
                         <li class="submenu dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Société Générale</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">APBL</a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('front.apropos') }}">A Propos</a></li>
                                 <li><a href="{{ url('/').'#contact' }}">Contact</a></li>
