@@ -67,13 +67,13 @@
     <div class="container">
                     <div class="loginbox">
                         <div class="login-left">
-                            <img class="img-fluid" src="assets/img/logo.png" alt="Logo">
+                            <!-- <img class="img-fluid" src="assets/img/logo.png" alt="Logo"> -->
                         </div>
                         <div class="login-right">
                             <div class="login-right-wrap">
                                 <h1>Mot de passe oublié?</h1>
                                 <p class="account-subtitle">Entrer votre adresse mail pour avoir le lien pour réinitialiser votre mot de passe</p>
-                                
+
                                 <!-- Form -->
                                 <form action="http://dreamguys.co.in/demo/ventura/login.html">
                                     <div class="form-group">
@@ -84,7 +84,7 @@
                                     </div>
                                 </form>
                                 <!-- /Form -->
-                                
+
                                 <div class="text-center dont-have">Remember your password? <a href="login.html">Login</a></div>
                             </div>
                         </div>
