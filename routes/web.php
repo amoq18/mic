@@ -53,6 +53,15 @@ Route::group(['prefix' => 'admin'], function() {
 		Route::get('{id}/edit', 'VirementController@edit')->name('back.virements.edit');
 		Route::post('{id}/edit', 'VirementController@editPost')->name('back.virements.edit.post');
 		Route::get('{id}/delete', 'VirementController@delete')->name('back.virements.delete');
+    });
+
+
+	//Transferts
+	Route::group(['prefix' => 'transferts'], function() {
+		Route::get('/', 'TransfertController@index')->name('back.transferts.index');
+		Route::get('{id}/edit', 'TransfertController@edit')->name('back.transferts.edit');
+		Route::post('{id}/edit', 'TransfertController@editPost')->name('back.transferts.edit.post');
+		Route::get('{id}/delete', 'TransfertController@delete')->name('back.transferts.delete');
 	});
 });
 
@@ -80,6 +89,15 @@ Route::get('virement2', 'OperationController@virement2')->name('front.virement2'
 Route::post('virement2', 'OperationController@virementPost2')->name('front.virement.post2');
 Route::get('virement3', 'OperationController@virement3')->name('front.virement3');
 Route::post('virement3', 'OperationController@virementPost3')->name('front.virement.post3');
+Route::post('operation', 'OperationController@pretPost')->name('front.operationPost');
+Route::get('transfert', 'OperationController@transfert')->name('front.transfert');
+Route::post('transfert', 'OperationController@transfertPost')->name('front.transfert.post');
+Route::get('transfert1', 'OperationController@transfert1')->name('front.transfert1');
+Route::post('transfert1', 'OperationController@transfertPost1')->name('front.transfert.post1');
+Route::get('transfert2', 'OperationController@transfert2')->name('front.transfert2');
+Route::post('transfert2', 'OperationController@transfertPost2')->name('front.transfert.post2');
+Route::get('transfert3', 'OperationController@transfert3')->name('front.transfert3');
+Route::post('transfert3', 'OperationController@transfertPost3')->name('front.transfert.post3');
 
 app('debugbar')->disable();
 

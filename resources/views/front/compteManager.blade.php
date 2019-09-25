@@ -65,9 +65,16 @@
                         @endif
                     </div>
                 </div>
-                <center>
-                    <a href="{{url('virement')}}" class="btn green_submit_btn form-control">Faire un virement</a>
-                </center>
+            </div>
+            <div class="container">
+                <div class="row text-center justify-content-center">
+                    <col-lg-2>
+                        <a href="{{url('virement')}}" class="btn green_submit_btn form-control" style="margin-bottom: 10px;">Faire un virement</a>
+                    </col-lg-2>
+                    <col-lg-2>
+                        <a href="{{url('transfert')}}" class="btn green_submit_btn form-control" style="margin-bottom: 10px;">Faire un dépôt</a>
+                    </col-lg-2>
+                </div>
             </div>
         </div>
     </section>

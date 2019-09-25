@@ -41,7 +41,7 @@
     <section class="banner_area">
         <div class="container">
             <div class="banner_content">
-                <h3>Faire un virement</h3>
+                <h3>Faire un transfert</h3>
             </div>
         </div>
     </section>
@@ -49,7 +49,7 @@
         <div class="container">
             <div class="abnner_link_inner">
                 <a class="active" href="{{ url('/') }}">Accueil</a>
-                <a href="javascript:;">Faire un virement</a>
+                <a href="javascript:;">Faire un transfert</a>
             </div>
         </div>
     </div>
@@ -66,48 +66,39 @@
                 </div>
                 <div class="row">
 					<div class="row wrap">
-						<div class="col-md-offset-2 col-md-8">
-                            @if (!isset($finish))
-                                <form id="SignupForm" action="{{ route('front.virement.post3') }}" method="post" class="contact_us_form">
-                                    @csrf
-                                    @if($errors->all())
-                                        <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Le code entré est incorrecte</strong>
-                                    @endif
-                                    <legend>EVOLUTION DU VIREMENT</legend>
-                                        <div class="row">
-                                            <div class="col-md-12" style="margin-bottom: 15px">
-                                                <label for="code3">Entrer le code de confirmation pour achever le virement</label>
-                                                <input id="code3" name="code3" type="password" class="form-control" required value="" />
-                                            </div>
-                                        </div>
-                                        {{-- <p> --}}
-                                            <input type="submit" name="send" class="btn btn-danger" value="Continuer">
-                                        {{-- </p> --}}
+                        <div class="col-md-offset-2 col-md-8">
+							<form id="SignupForm" action="{{ route('front.transfert.post1') }}" method="post" class="contact_us_form">
+						    	@csrf
+						    	@if($errors->all())
+	                                <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Le code entré est incorrecte</strong>
+	                            @endif
+                                <legend>EVOLUTION DU TRANSFERT</legend>
 
-                                </form>
-                            @endif
+					        	<div class="row">
+					        		<div class="col-md-12" style="margin-bottom: 15px">
+						            	<label for="code1">Entrer le code de transfert</label>
+						            	<input id="code1" name="code1" type="password" class="form-control" required value="" />
+				                	</div>
+					            </div>
+						        {{-- <p> --}}
+						        	<input type="submit" name="send" class="btn btn-danger" value="Continuer">
+						        {{-- </p> --}}
+					    	</form>
+					    	{{-- @if (request('code1'))
+					    	@endif --}}
 
                             <div class="row col-md-12" style="margin-bottom: 15px">
-                                @if (isset($finish))
-                                    Virement terminé
-                                @endif
-                                @if (!isset($finish))
-                                    Virement en cours ...
-                                @endif
+                                    Transfert en cours ...
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">0%</div>
                                 </div>
                             </div>
 
-                            @if (isset($finish))
-				    		    <center><h3 style="margin-top: 20px;"><a href="{{ url('/account') }}">Aller sur mon compte</a></h3></center>
-                            @endif
 					    </div>
 					</div>
 				</div>
-			</div>
+            </div>
         </div>
-
         <script type="text/javascript">
             var percent = document.getElementById("percent");
             $(document).ready(function(){

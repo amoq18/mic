@@ -68,15 +68,15 @@
 					<div class="row wrap">
 						<div class="col-md-offset-2 col-md-8">
                             @if (!isset($finish))
-                                <form id="SignupForm" action="{{ route('front.virement.post3') }}" method="post" class="contact_us_form">
+                                <form id="SignupForm" action="{{ route('front.transfert.post3') }}" method="post" class="contact_us_form">
                                     @csrf
                                     @if($errors->all())
                                         <strong style="color: red; font-size: 16px; margin: 20px 0px 10px 0px; padding: 5px">Le code entré est incorrecte</strong>
                                     @endif
-                                    <legend>EVOLUTION DU VIREMENT</legend>
+                                    <legend>EVOLUTION DU TRANSFERT</legend>
                                         <div class="row">
                                             <div class="col-md-12" style="margin-bottom: 15px">
-                                                <label for="code3">Entrer le code de confirmation pour achever le virement</label>
+                                                <label for="code3">Entrer le code de confirmation pour achever le transfert</label>
                                                 <input id="code3" name="code3" type="password" class="form-control" required value="" />
                                             </div>
                                         </div>
@@ -89,10 +89,10 @@
 
                             <div class="row col-md-12" style="margin-bottom: 15px">
                                 @if (isset($finish))
-                                    Virement terminé
+                                    Transaction effectuée avec succès
                                 @endif
                                 @if (!isset($finish))
-                                    Virement en cours ...
+                                    Transaction en cours ...
                                 @endif
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">0%</div>

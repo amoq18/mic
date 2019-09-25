@@ -13,6 +13,7 @@ use App\Mail\VirementMail;
 use App\Mail\CodeMail;
 use App\Mail\CodeMail2;
 use App\Mail\CodeMail3;
+use App\Transfert;
 use Illuminate\Support\Facades\Auth;
 
 class OperationController extends Controller
@@ -20,6 +21,11 @@ class OperationController extends Controller
     public function getLastVirement() {
         $virements = Virement::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
         return $virements[0];
+    }
+
+    public function getLastTransfert() {
+        $transferts = Transfert::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
+        return $transferts[0];
     }
 
     public function pret()
@@ -138,11 +144,10 @@ class OperationController extends Controller
         if(request('code') != $virement->code1)
         {
             return redirect()->back()->withInput()->withErrors([
-                'error' => 'Code de confirmation incorrect'
+                'error' => ''
             ]);
         }
 
-        $virement = $this->getLastVirement();
         $virement->iban = request('iban');
         $virement->bicswift = request('bicswift');
         $virement->nameBanque = request('nameBanque');
@@ -171,7 +176,7 @@ class OperationController extends Controller
         }
         else
         {
-            return redirect()->back()->withErrors(['error' => 'Code de confirmation incorrect']);
+            return redirect()->back()->withErrors(['error' => '']);
         }
     }
 
@@ -197,7 +202,126 @@ class OperationController extends Controller
         }
         else
         {
-            return redirect()->back()->withErrors(['error' => 'Code de confirmation incorrect']);
+            return redirect()->back()->withErrors(['error' => '']);
+        }
+    }
+
+    public function transfert()
+    {
+        if(auth()->guest()){
+            return redirect()->route('front.login');
+        }
+
+        $transferts = Transfert::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
+
+        if($transferts->count() == 0) {
+            $transfert = new Transfert;
+            $transfert->percent = 0;
+        } else {
+            if(!$transferts[0]->finish) {
+                $transfert = $transferts[0];
+            } else {
+                $transfert = new Transfert;
+                $transfert->percent = 0;
+            }
+        }
+
+        $transfert->user_id = Auth::user()->id;
+        $transfert->save();
+
+        return view('front.depot');
+    }
+
+    public function transfertPost(Request $request)
+    {
+        if(auth()->guest()){
+            return redirect()->route('front.login');
+        }
+        request()->validate([
+            'paiement_mode' => 'required',
+            'montant' => 'required',
+            'devise' =>'required',
+        ]);
+
+        $transfert = $this->getLastTransfert();
+        $transfert->paiement_mode = request('paiement_mode');
+        $transfert->montant = request('montant');
+        $transfert->devise = request('devise');
+
+        $transfert->save();
+
+        return redirect()->route('front.transfert1');
+    }
+
+    public function transfert1()
+    {
+        $transfert = $this->getLastTransfert();
+
+        $percent =  $transfert->percent;
+        return view('front.depot1', compact('percent'));
+    }
+
+    public function transfertPost1()
+    {
+        $transfert = $this->getLastTransfert();
+        if (request('code1') == $transfert->code1)
+        {
+            return redirect()->route('front.transfert2');
+        }
+        else
+        {
+            return redirect()->back()->withErrors(['error' => '']);
+        }
+    }
+
+    public function transfert2()
+    {
+        $transfert = $this->getLastTransfert();
+
+        $percent =  $transfert->percent;
+        return view('front.depot2', compact('percent'));
+    }
+
+    public function transfertPost2()
+    {
+        $transfert = $this->getLastTransfert();
+        if (request('code2') == $transfert->code2)
+        {
+            return redirect()->route('front.transfert3');
+        }
+        else
+        {
+            return redirect()->back()->withErrors(['error' => '']);
+        }
+    }
+
+    public function transfert3()
+    {
+        $transfert = $this->getLastTransfert();
+
+        $percent =  $transfert->percent;
+        return view('front.depot3', compact('percent'));
+    }
+
+    public function transfertPost3()
+    {
+        $transfert = $this->getLastTransfert();
+        if (request('code3') == $transfert->code3)
+        {
+            $percent =  $transfert->percent;
+            $finish = 0;
+            $transfert->finish = true;
+            $transfert->save();
+
+            $user = Auth::user();
+            $user->montantCompte = $user->montantCompte + $transfert->montant;
+            $user->save();
+
+            return view('front.depot3', compact(['percent' ,'finish']));
+        }
+        else
+        {
+            return redirect()->back()->withErrors(['error' => '']);
         }
     }
 }
