@@ -78,14 +78,14 @@
 					            <div class="row form-group">
                                     <div class="col-md-6">
                                         <label for="devise">Devise</label>
-                                        <select name="devise" class="form-control">
-                                            <option value="dollar">Dollar</option>
-                                            <option value="euro">Euro</option>
-                                        </select>
+						            	<input id="devise" name="devise" type="text" class="form-control" required value="{{ old('devise') }}" placeholder="Ex: Dollar"/>
+						            	@if($errors->has('devise'))
+					                    	<div class="invalid-feedback">{{ $errors->first('devise') }}</div>
+					                    @endif
                                     </div>
 				                	<div class="col-md-6">
                                         <label for="paiement_mode">Moyen de paiement</label>
-                                        <select name="paiement_mode" class="form-control">
+                                        <select name="paiement_mode" class="form-control"  style="height: 40px" >
                                             <option value="Werstern">Werstern</option>
                                             <option value="Visa">Visa</option>
                                         </select>

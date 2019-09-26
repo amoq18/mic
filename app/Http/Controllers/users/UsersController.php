@@ -148,9 +148,13 @@ class UsersController extends Controller
         {
             $file = $request->file('photo');
             if($file->isValid()) {
-                $path = $file->store('public/images');
+                // $path = $file->store('public/images');
+                $fileName   = time() . '_' . str_replace(' ','-',$file->getClientOriginalName());
+                $path = "assets/photos/". str_replace(' ','',$fileName);
+                move_uploaded_file($file->getRealPath(),$path);
             }
         }
+
         $users = new Utilisateur;
 
         $users->nom = $request->nom;
@@ -164,7 +168,7 @@ class UsersController extends Controller
         $users->devise = $request->devise;
         $users->password = bcrypt($request->password);
         $users->isAdmin = 0;
-        $users->photo_url = Storage::url($path);
+        $users->photo_url = $path;
         $users->montantCompte = 0;
         $users->save();
 
