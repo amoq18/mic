@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="manager_image">
-                        <img src="{{ asset('assets/front/img/manager-image.png') }}" alt="">
+                        <img src="{{ asset('assets/front/img/manager-image.jpeg') }}" alt="">
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -60,7 +60,7 @@
                         </div>
                         <h3>Vous êtes entrepreneur, retrouvez ici du contenu utile pour gérer, développer et pérenniser votre activité en France et à l’international. Financer votre développement, booster votre business grâce au e-commerce, vous lancer à l’international, protéger vos salariés et votre entreprise, vous développer par croissance externe, passer le relais, motiver vos équipes, … autant de sujets qui vous concernent pour faire grandir votre entreprise. Témoignages, solutions, articles, actualités, événements, … l’essentiel pour entreprendre. <br>
                         APBL a été créée pour financer le développement des entreprises. Il me semble essentiel de cultiver l’esprit pionnier que nous partageons depuis toujours avec nos clients entrepreneurs et particuliers pour leur divees problèmes..</p>
-                        <h3 style="margin-bottom: 50px"><strong>Frédéric Oudéa <br>
+                        <h3 style="margin-bottom: 50px"><strong>Andrew John <br>
                         Directeur général</strong></h3>
                     </div>
                 </div>
