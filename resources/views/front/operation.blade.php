@@ -57,13 +57,13 @@
             </div>
         </div>
     </div>
-    
+
     <!--================Contact Us Area =================-->
     <section class="contact_us_area">
         <div class="container">
             <div class="contact_us_inner">
                 <div class="section_title">
-	                <h2>Entrez vos informations pour bénéficir d'un prêt</h2>
+	                <h2>Entrez vos informations pour bénéficier d'un prêt</h2>
                 </div>
                 <div class="row">
 					<div class="row wrap">
@@ -273,9 +273,9 @@
 	<script>
 	    $( function() {
 	        var $signupForm = $( '#SignupForm' );
-	        
+
 	        $signupForm.validate({errorElement: 'em'});
-	        
+
 	        $signupForm.formToWizard({
 	            submitButton: 'SaveAccount',
 	            nextBtnClass: 'btn btn-primary next',
