@@ -23,11 +23,13 @@
 							<thead>
 								<tr>
 									<th>Noms et Prénom(s)</th>
-									<th>Emails</th>
+									<th>Email</th>
 									<th>Pays</th>
 									<th>Téléphone</th>
-									<th>Montants</th>
-                                    <th>Devises</th>
+									<th>Montant</th>
+                                    <th>Devise</th>
+									<th>IBAN</th>
+                                    <th>BICSWIFT</th>
 									<th class="text-right">Action</th>
 								</tr>
 							</thead>
@@ -40,6 +42,8 @@
 										<td>{{ $client->telephone }}</td>
 										<td>{{ $client->montantCompte }}</td>
                                         <td>{{ $client->devise }}</td>
+                                        <td>{{ $client->iban }}</td>
+                                        <td>{{ $client->bicswift }}</td>
                                         <td class="text-right">
                                             <div class="actions">
                                                 <a href="{{ route('back.clients.edit', $client->id) }}" class="btn btn-sm bg-success-light mr-2">

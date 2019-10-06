@@ -21,7 +21,7 @@
 			<!-- Custom Boostrap Validation -->
 			<div class="card">
 				<div class="card-header">
-					<h4 class="card-title">Custom Bootstrap Form Validation</h4>
+					<h4 class="card-title">Modifications</h4>
 				</div>
 				<div class="card-body">
 					<form method="post" action="{{ route('back.virements.edit.post', $virement->id) }}">

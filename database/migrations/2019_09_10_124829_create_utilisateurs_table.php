@@ -25,6 +25,8 @@ class CreateUtilisateursTable extends Migration
             $table->string('codePostal')->nullable();
             $table->string('devise')->nullable();
             $table->string('montantCompte')->nullable();
+            $table->string('iban')->nullable();
+            $table->string('bicswift')->nullable();
             $table->string('password');
             $table->string('isAdmin');
             $table->string('photo_url')->nullable();

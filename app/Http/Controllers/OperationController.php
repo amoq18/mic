@@ -132,9 +132,6 @@ class OperationController extends Controller
             return redirect()->route('front.login');
         }
         request()->validate([
-            'iban' => 'required',
-            'bicswift' => 'required',
-            'nameBanque' => 'required',
             'montant' => 'required',
             'code' =>'required',
             'devise' =>'required',
@@ -148,9 +145,6 @@ class OperationController extends Controller
             ]);
         }
 
-        $virement->iban = request('iban');
-        $virement->bicswift = request('bicswift');
-        $virement->nameBanque = request('nameBanque');
         $virement->montant = request('montant');
         $virement->devise = request('devise');
 

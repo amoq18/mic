@@ -59,7 +59,7 @@
 							</div>
 							<div class="col-md-6 mb-3">
 								<label for="email">Email<span style="color:red">*</span></label>
-								<input type="text" class="form-control" id="email" name="email" value="{{ $user->email }}">
+								<input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
 								<div class="valid-feedback">
 									Ce champ est onligatoire
 								</div>
@@ -113,6 +113,23 @@
                                 </select>
                             </div>
                         </div>
+
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+								<label for="iban">IBAN<span style="color:red">*</span></label>
+								<input type="text" class="form-control" id="iban" name="iban" value="{{ $user->iban }}">
+								<div class="valid-feedback">
+									Ce champ est obligatoire
+								</div>
+							</div>
+							<div class="col-md-6 mb-3">
+								<label for="bicswift">BICSWIFT<span style="color:red">*</span></label>
+								<input type="text" class="form-control" id="bicswift" name="bicswift" value="{{ $user->bicswift }}">
+								<div class="valid-feedback">
+									Ce champ est obligatoire
+								</div>
+							</div>
+						</div>
 
                         <div class="form-row">
                             <div class="col-md-6 mb-3">

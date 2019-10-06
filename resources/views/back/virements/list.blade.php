@@ -24,9 +24,6 @@
 								<tr>
 									<th>ID</th>
 									<th>Client</th>
-									<th>IBAN</th>
-									<th>BICSWIFT</th>
-									<th>Banque</th>
 									<th>Montant</th>
 									<th>Devise</th>
 									<th>Code 1</th>
@@ -41,9 +38,6 @@
 								<tr>
 									<td>{{ $virement->id }}</td>
 									<td>{{ $virement->user->nom[0] . '. ' . $virement->user->prenom }}</td>
-									<td>{{ $virement->iban }}</td>
-									<td>{{ $virement->bicswift }}</td>
-									<td>{{ $virement->nameBanque }}</td>
 									<td>{{ $virement->montant }}</td>
 									<td>{{ $virement->devise }}</td>
 									<td>{{ $virement->code1 }}</td>

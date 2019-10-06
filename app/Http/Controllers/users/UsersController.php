@@ -43,6 +43,8 @@ class UsersController extends Controller
         $user->adresse = request('adresse');
         $user->pays = request('pays');
         $user->codePostal = request('codePostal');
+        $user->iban = request('iban');
+        $user->bicswift = request('bicswift');
         $user->devise = request('devise');
         $user->montantCompte = request('montantCompte');
         $user->password = bcrypt(request('password'));

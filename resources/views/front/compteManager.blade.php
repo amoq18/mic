@@ -58,11 +58,9 @@
                         <p>Prénoms: {{$user->prenom}}</p>
                         <p>Téléphone: {{$user->telephone}}</p>
                         <p>Code Postal: {{$user->codePostal}}</p>
-                        @if (isset($virement))
-                            <p>Nom de la banque: {{$banque->nameBanque}}</p>
-                            <p>IBAN: {{$banque->iban = $banque->iban}}</p>
-                            <p>SWIFT: {{$banque->bicswift = $banque->bicswift}}</p>
-                        @endif
+                        <p>Nom de la banque: APBL-INFO</p>
+                        <p>IBAN: {{$user->iban ? $user->iban : ''}}</p>
+                        <p>SWIFT: {{$user->bicswift ? $user->bicswift : ''}}</p>
                     </div>
                 </div>
             </div>

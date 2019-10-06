@@ -15,9 +15,6 @@ class CreateVirementsTable extends Migration
     {
         Schema::create('virements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('iban')->nullable();
-            $table->string('bicswift')->nullable();
-            $table->string('nameBanque')->nullable();
             $table->string('montant')->nullable();
             $table->string('devise')->nullable();
             $table->string('code1')->nullable();

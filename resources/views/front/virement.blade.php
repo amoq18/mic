@@ -91,7 +91,7 @@
 				                	</div>
 					            </div> --}}
 
-					        	<div class="row form-group">
+					        	{{-- <div class="row form-group">
 					        		<div class="col-md-6">
 						            	<label for="iban">IBAN</label>
 						            	<input id="iban" name="iban" type="text" class="form-control" required value="{{ old('iban') }}" />
@@ -106,16 +106,16 @@
 					                    	<div class="invalid-feedback">{{ $errors->first('bicswift') }}</div>
 					                    @endif
 				                	</div>
-					            </div>
+					            </div> --}}
 
 					        	<div class="row form-group">
-					        		<div class="col-md-6">
+					        		{{-- <div class="col-md-6">
 						            	<label for="nameBanque">Nom de la banque</label>
 						            	<input id="nameBanque" name="nameBanque" type="text" class="form-control" required value="{{ old('nameBanque') }}" />
 						            	@if($errors->has('nameBanque'))
 					                    	<div class="invalid-feedback">{{ $errors->first('nameBanque') }}</div>
 					                    @endif
-				                	</div>
+				                	</div> --}}
 				                	<div class="col-md-6">
 						            	<label for="montant">Montant</label>
 						            	<input id="montant" name="montant" type="number" class="form-control" required value="{{ old('montant') }}" />
