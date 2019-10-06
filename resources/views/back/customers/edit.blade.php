@@ -107,10 +107,10 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="devise">Devise</label>
-                                <select name="devise" style="height: 40px; width: 370px" class="form-control" value="{{ $user->devise }}">
-                                    <option value="dollar">Dollar</option>
-                                    <option value="euro">Euro</option>
-                                </select>
+                                <input id="devise" name="devise" type="text" class="form-control" required value="{{ old('devise') }}" placeholder="Ex: Dollar"/>
+                                @if($errors->has('devise'))
+                                    <div class="invalid-feedback">{{ $errors->first('devise') }}</div>
+                                @endif
                             </div>
                         </div>
 
